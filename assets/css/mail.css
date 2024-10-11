@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(135deg, #4a90e2, #9013fe); /* Gradient background */
+    padding: 0; /* Menghilangkan padding default */
+    margin: 0; /* Menghilangkan margin default */
+    font-family: 'Arial', sans-serif; /* Font yang lebih modern */
+}
+
+.hero.is-fullheight {
+    background-color: transparent; /* Menghilangkan warna latar belakang hero */
+}
+
+.container {
+    max-width: 600px; /* Maksimal lebar kontainer */
+    padding: 2rem; /* Padding untuk kontainer */
+}
+
+.box {
+    border-radius: 15px; /* Sudut kotak membulat */
+    padding: 2rem; /* Padding untuk box */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang putih transparan */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi saat hover */
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Mengangkat kotak saat hover */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+}
+
+.avatar img {
+    max-width: 500px; /* Ukuran gambar avatar */
+    max-height: 500px; /* Ukuran gambar avatar */
+    border: 5px solid #4a90e2; /* Border gambar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan pada gambar */
+    transition: transform 0.3s; /* Transisi untuk gambar */
+}
+
+.avatar img:hover {
+    transform: scale(1.1); /* Membesar saat hover pada gambar */
+}
+
+.hero-title {
+    color: #ffffff; /* Warna teks judul */
+}
+
+.subtitle {
+    margin-bottom: 1.5rem; /* Jarak bawah subtitle */
+    color: #ffffff; /* Warna teks subtitle */
+}
+
+#btn {
+    background-color: #4a90e2; /* Warna tombol */
+    color: white; /* Warna teks tombol */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi warna latar belakang tombol */
+    font-weight: bold; /* Teks tombol tebal */
+}
+
+#btn:hover {
+    background-color: #9013fe; /* Warna tombol saat hover */
+    transform: scale(1.05); /* Membesar saat hover */
+}
