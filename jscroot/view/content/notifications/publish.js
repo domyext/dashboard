@@ -47,7 +47,7 @@ function actionfunctionname(){
 
 function responseFunction(result){
     if(result.status === 200){
-        const katakata = "Mohon bantuannya untuk memberikan rating dari nomor domyikado";
+        const katakata = "Please rate our service!";
         Swal.fire({
             icon: "success",
             title: "Berhasil",
