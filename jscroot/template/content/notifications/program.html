@@ -1,41 +1,57 @@
-<h1>Umpan Balik User</h1>
-      <div class="field">
-        <label class="label">Nama Proyek</label>
-        <div class="control">
-            <div class="select">
-                <select id="kode" name="projectName" required>
-                    <!-- Options akan diisi melalui JavaScript -->
-                </select>
-            </div>
-        </div>
-      </div>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../../../../../../assets/css/program.css" />
+</head>
 
-      <div class="field">
-        <label class="label">Nama User</label>
-        <div class="control">
-          <input class="input" type="text" id="nama" placeholder="Nama Product Owner atau Reviewer">
-        </div>
+<h1 class="title">Umpan Balik User</h1>
+<div class="form-container">
+  <div class="field">
+    <label class="label"><i class="fas fa-clipboard-list"></i> Nama Proyek</label>
+    <div class="control has-icons-left">
+      <div class="select is-fullwidth">
+        <select id="kode" name="projectName" required>
+          <option>Pilih Proyek</option>
+        </select>
+        <span class="icon is-left">
+          <i class="fas fa-folder"></i>
+        </span>
       </div>
+    </div>
+  </div>
 
-      <div class="field">
-        <label class="label">Kontak WhatsApp</label>
-        <div class="control">
-          <input class="input" type="text" id="phone" placeholder="nomor WhatsApp Product Owner/Reviewer">
-        </div>
-      </div>
+  <div class="field">
+    <label class="label"><i class="fas fa-user"></i> Nama User</label>
+    <div class="control has-icons-left">
+      <input class="input" type="text" id="nama" placeholder="Nama Product Owner atau Reviewer" required />
+      <span class="icon is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </div>
+  </div>
 
-      <div class="field">
-        <label class="label">Pertanyaan feedback</label>
-        <div class="control">
-          <textarea class="textarea" id="solusi" placeholder="Tulis paparan aktifitas yang dimintai feedback"></textarea>
-        </div>
-      </div>
+  <div class="field">
+    <label class="label"><i class="fas fa-phone"></i> Kontak WhatsApp</label>
+    <div class="control has-icons-left">
+      <input class="input" type="tel" id="phone" placeholder="+6281234567890" required />
+      <span class="icon is-left">
+        <i class="fab fa-whatsapp"></i>
+      </span>
+    </div>
+  </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link" id="tombolprogramtask">Kirim</button>
-        </div>
-        <div class="control">
-          <button class="button is-link is-light" id="tombolcancelprogramtask">Batal</button>
-        </div>
-      </div>
+  <div class="field">
+    <label class="label"><i class="fas fa-comments"></i> Pertanyaan Feedback</label>
+    <div class="control">
+      <textarea class="textarea" id="solusi" placeholder="Tulis paparan aktivitas yang dimintai feedback" required></textarea>
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-primary" id="tombolprogramtask"><i class="fas fa-paper-plane"></i> Kirim</button>
+    </div>
+    <div class="control">
+      <button class="button is-light" id="tombolcancelprogramtask"><i class="fas fa-times"></i> Batal</button>
+    </div>
+  </div>
+</div>
