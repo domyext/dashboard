@@ -51,11 +51,15 @@ body {
 }
 
 .chat-message.user {
-  background-color: #d1e7dd; /* User message color */
   align-self: flex-end;
-  text-align: right;
-  margin-left: auto;
-  border-radius: 10px 0 10px 10px;
+  background-color: #00d1b2;
+  color: white;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background-color: #00d1b2;
+  color: white;
 }
 
 .chat-message.other {
@@ -112,11 +116,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.message.sent {
-  align-self: flex-end;
-  background-color: #00d1b2;
-  color: white;
-}
+
 
 .message.received {
   align-self: flex-start;
