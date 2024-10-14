@@ -1,28 +1,43 @@
-<h1>Laporan Pekerjaan Selesai</h1>
+<!-- Tambahkan CDN Font Awesome -->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-      <div class="field">
-        <label class="label">Nama Proyek</label>
-        <div class="control">
-            <div class="select">
-                <select id="project-name" name="projectName" required>
-                    <!-- Options akan diisi melalui JavaScript -->
-                </select>
-            </div>
-        </div>
+<h1 class="title"><i class="fas fa-tasks"></i> Laporan Pekerjaan Selesai</h1>
+<div class="form-container">
+  
+  <div class="field">
+    <label class="label"><i class="fas fa-folder"></i> Nama Proyek</label>
+    <div class="control has-icons-left">
+      <div class="select is-fullwidth">
+        <select id="project-name" name="projectName" required>
+          <option>Pilih Proyek</option>
+        </select>
+        <span class="icon is-left">
+          <i class="fas fa-briefcase"></i>
+        </span>
       </div>
+    </div>
+  </div>
 
-      <div class="field">
-        <label class="label">Paparan</label>
-        <div class="control">
-          <textarea class="textarea" id="solusi" placeholder="Tulis paparan pekerjaan yang sudah selesai"></textarea>
-        </div>
-      </div>
+  <div class="field">
+    <label class="label"><i class="fas fa-file-alt"></i> Paparan</label>
+    <div class="control">
+      <textarea class="textarea" id="solusi" placeholder="Tulis paparan pekerjaan yang sudah selesai" required></textarea>
+    </div>
+  </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-link" id="tombolpublishtask">Kirim</button>
-        </div>
-        <div class="control">
-          <button class="button is-link is-light" id="tombolcancelpublistask">Batal</button>
-        </div>
-      </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-primary" id="tombolpublishtask">
+        <i class="fas fa-paper-plane"></i> Kirim
+      </button>
+    </div>
+    <div class="control">
+      <button class="button is-light" id="tombolcancelpublistask">
+        <i class="fas fa-times"></i> Batal
+      </button>
+    </div>
+  </div>
+
+</div>
