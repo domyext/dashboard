@@ -3,7 +3,6 @@ import {disableInput,addCSS} from 'https://cdn.jsdelivr.net/gh/jscroot/element@0
 export async function main(){
   addCSS('./assets/css/chat.css');
   var conn;
-  const myId=getRandomColor();
   const sep='|||';
   const msg = document.getElementById("msg");
   const log = document.getElementById("log");
@@ -15,7 +14,7 @@ export async function main(){
     if (!msg.value) {
       return false;
     }
-    conn.send(myId+sep+msg.value);
+    conn.send(sep+msg.value);
     msg.value = "";
     return false;
   };
@@ -31,7 +30,7 @@ export async function main(){
       msg.placeholder = "Refresh browser kakak...";
     };
     conn.onmessage = function (evt) {
-      var ident = getFrom(myId,evt.data,sep)
+      var ident = getFrom(evt.data,sep)
       var messages = ident.txt.split('\n');
       for (var i = 0; i < messages.length; i++) {
         var item = document.createElement("div");
@@ -59,25 +58,15 @@ function appendLog(log,item) {
   log.scrollTop=0;
 }
 
-function getFrom(myid,message,sep){
+function getFrom(message,sep){
   var cls;
   var txt;
-  if (message.includes(myid+sep)){
+  if (message.includes(sep)){
     cls='user'; 
-    txt=message.replace(myid+sep,'');
+    txt=message.replace(sep,'');
   }else{
     cls='other'; 
     txt=message.split(sep)[1];
   }
   return {cls,txt};
-}
-
-
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
 }
