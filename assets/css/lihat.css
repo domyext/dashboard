@@ -31,7 +31,7 @@ body {
 }
 
 .button.is-primary {
-  background-color: #3273dc;
+  background: linear-gradient(135deg, #089218, #109a7a);
   color: white;
   border: none;
 }
