@@ -1,57 +1,65 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="../../../../../../assets/css/program.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="../../../../../../assets/css/program.css">
 </head>
 
-<h1 class="title">Umpan Balik User</h1>
-<div class="form-container">
-  <div class="field">
-    <label class="label"><i class="fas fa-clipboard-list"></i> Nama Proyek</label>
-    <div class="control has-icons-left">
-      <div class="select is-fullwidth">
-        <select id="kode" name="projectName" required>
-          <option>Pilih Proyek</option>
-        </select>
+<body>
+  <div class="form-container">
+    <h1 class="title"><i class="fas fa-comments"></i>Umpan Balik User</h1>
+    
+    <div class="field">
+      <label class="label"><i class="fas fa-clipboard-list"></i> Nama Proyek</label>
+      <div class="control has-icons-left">
+        <div class="select is-fullwidth">
+          <select id="kode" name="projectName" required>
+            <option>Pilih Proyek</option>
+          </select>
+          <span class="icon is-left">
+            <i class="fas fa-folder"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label"><i class="fas fa-user"></i> Nama User</label>
+      <div class="control has-icons-left">
+        <input class="input" type="text" id="nama" placeholder="Nama Product Owner atau Reviewer" required />
         <span class="icon is-left">
-          <i class="fas fa-folder"></i>
+          <i class="fas fa-user"></i>
         </span>
       </div>
     </div>
-  </div>
 
-  <div class="field">
-    <label class="label"><i class="fas fa-user"></i> Nama User</label>
-    <div class="control has-icons-left">
-      <input class="input" type="text" id="nama" placeholder="Nama Product Owner atau Reviewer" required />
-      <span class="icon is-left">
-        <i class="fas fa-user"></i>
-      </span>
+    <div class="field">
+      <label class="label"><i class="fas fa-phone"></i> Kontak WhatsApp</label>
+      <div class="control has-icons-left">
+        <input class="input" type="tel" id="phone" placeholder="+6281234567890" required />
+        <span class="icon is-left">
+          <i class="fab fa-whatsapp"></i>
+        </span>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <label class="label"><i class="fas fa-phone"></i> Kontak WhatsApp</label>
-    <div class="control has-icons-left">
-      <input class="input" type="tel" id="phone" placeholder="+6281234567890" required />
-      <span class="icon is-left">
-        <i class="fab fa-whatsapp"></i>
-      </span>
+    <div class="field">
+      <label class="label"><i class="fas fa-comments"></i> Pertanyaan Feedback</label>
+      <div class="control">
+        <textarea class="textarea" id="solusi" placeholder="Tulis paparan aktivitas yang dimintai feedback" required></textarea>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <label class="label"><i class="fas fa-comments"></i> Pertanyaan Feedback</label>
-    <div class="control">
-      <textarea class="textarea" id="solusi" placeholder="Tulis paparan aktivitas yang dimintai feedback" required></textarea>
+    <div class="field is-grouped is-grouped-centered">
+      <div class="control">
+        <button class="button is-primary" id="tombolprogramtask">
+          <i class="fas fa-paper-plane"></i> Kirim
+        </button>
+      </div>
+      <div class="control">
+        <button class="button is-light" id="tombolcancelprogramtask">
+          <i class="fas fa-times"></i> Batal
+        </button>
+      </div>
     </div>
   </div>
-
-  <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-primary" id="tombolprogramtask"><i class="fas fa-paper-plane"></i> Kirim</button>
-    </div>
-    <div class="control">
-      <button class="button is-light" id="tombolcancelprogramtask"><i class="fas fa-times"></i> Batal</button>
-    </div>
-  </div>
-</div>
+</body>
