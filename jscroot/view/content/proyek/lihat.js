@@ -10,7 +10,7 @@ import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.7/croot.js"
 import { getCookie } from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 import { addCSSIn } from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
-import { id, backend } from "/dashboard/jscroot/url/config.js";
+import { id, backend } from "/control/jscroot/url/config.js";
 import { loadScript } from "../../../controller/main.js";
 import { truncateText, addRevealTextListeners } from "../../utils.js";
 
