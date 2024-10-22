@@ -36,13 +36,6 @@ export async function main() {
 function getUserFunction(result) {
   if (result.status !== 404) {
     const roundedPoin = Math.round(result.data.poin);
-    setInner("biggreet", "Halo " + result.data.name);
-    setInner(
-      "subtitle",
-      "Jumlah rollup sprint point kamu saat ini sebesar " +
-        roundedPoin +
-        " poin."
-    );
     setInner("bigpoin", roundedPoin);
   } 
   else {
