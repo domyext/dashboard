@@ -31,13 +31,31 @@ body {
 }
 
 .button.is-primary {
-  background: linear-gradient(135deg, #089218, #109a7a);
+  background: linear-gradient(135deg, #38C7DB, #6825D0);
   color: white;
   border: none;
+  box-shadow: 0 4px 10px rgba(50, 115, 220, 0.2);
+  background-size: 200% 200%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button.is-primary:hover {
-  background-color: #2756a3;
+  animation: gradient-shift 3s ease infinite;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(50, 115, 220, 0.3);
+}
+
+/* Animation for smooth color shifting */
+@keyframes gradient-shift {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .table {
