@@ -22,6 +22,7 @@ export async function main() {
     id.content
   );
   await addCSSIn("assets/css/custom.css", id.content);
+  await addCSSIn("assets/css/lihat.css", id.content);
   await loadScript("https://code.jquery.com/jquery-3.6.0.min.js");
   await loadScript("https://cdn.datatables.net/2.0.8/js/dataTables.min.js");
 
