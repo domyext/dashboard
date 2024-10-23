@@ -36,9 +36,17 @@ export async function main() {
 function getUserFunction(result) {
   if (result.status !== 404) {
     const roundedPoin = Math.round(result.data.poin);
-    setInner("bigpoin", roundedPoin);
-  } 
-  else {
+    
+    // Ambil elemen dengan id "bigpoin" dan "poinIcon"
+    const poinElement = document.getElementById("bigpoin");
+    const poinIcon = document.getElementById("poinIcon");
+
+    // Tampilkan ikon jika poin tersedia dan set poin text
+    if (poinElement && poinIcon) {
+      poinElement.textContent = ` ${roundedPoin}`; // Set nilai poin
+      poinIcon.style.display = "inline"; // Tampilkan ikon
+    }
+  } else {
     redirect("/signup");
   }
 }
