@@ -52,11 +52,18 @@ function getUserFunction(result) {
 }
 
 function getUserTaskFunction(result) {
-  setInner("list", "");
-  setInner("bigtodo", "0");
-  if (result.status === 200) {
-    setInner("bigtodo", result.data.length.toString());
+  setInner("list", ""); // Bersihkan daftar To Do
+  const todoElement = document.getElementById("bigtodo");
+
+  if (result.status === 200 && todoElement) {
+    // Perbarui teks jumlah tugas
+    todoElement.textContent = result.data.length.toString();
+
+    // Isi daftar tugas
     result.data.forEach(isiTaskList);
+  } else {
+    // Jika tidak ada tugas, set ke 0
+    todoElement.textContent = "0";
   }
 }
 
