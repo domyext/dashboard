@@ -37,7 +37,7 @@ body {
 }
 
 .input, .select select, .textarea {
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
   padding: 10px;
   font-size: 1em;
@@ -46,7 +46,8 @@ body {
 }
 
 .input:focus, .select select:focus, .textarea:focus {
-  border-color: #3273dc;
+  border-bottom: 2px solid #000; /* Garis bawah berubah warna saat fokus */
+  outline: none; /* Hilangkan outline default */
 }
 
 .button {
