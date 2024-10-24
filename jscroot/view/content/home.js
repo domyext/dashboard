@@ -115,19 +115,29 @@ function putTaskFunction(result) {
 }
 
 function getUserDoingFunction(result) {
-  setInner("doing", "");
-  setInner("bigdoing", "0");
-  if (result.status === 200) {
-    setInner("bigdoing", "OTW");
-    let content = tableTemplate
-      .replace("#TASKNAME#", result.data.task)
-      .replace("#TASKID#", result.data._id)
-      .replace("#LABEL#", "Beres");
-    addChild("doing", "tr", "", content);
-    // Jalankan logika tambahan setelah addChild
-    runAfterAddChildDoing(result.data);
+  setInner("doing", ""); // Bersihkan daftar Doing
+  const doingElement = document.getElementById("bigdoing");
+
+  if (result.status === 200 && doingElement) {
+    // Perbarui teks status Doing
+    doingElement.textContent = "OTW"; // Atau bisa juga menggunakan result.data.length.toString() jika ingin menunjukkan jumlah
+
+    // Jika ada data tugas, tambahkan ke daftar Doing
+    if (result.data && result.data.task) {
+      let content = tableTemplate
+        .replace("#TASKNAME#", result.data.task)
+        .replace("#TASKID#", result.data._id)
+        .replace("#LABEL#", "Beres");
+      addChild("doing", "tr", "", content);
+      // Jalankan logika tambahan setelah addChild
+      runAfterAddChildDoing(result.data);
+    }
+  } else {
+    // Jika tidak ada tugas, set ke 0
+    doingElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
   }
 }
+
 
 function runAfterAddChildDoing(value) {
   // Temukan elemen tr yang baru saja ditambahkan
