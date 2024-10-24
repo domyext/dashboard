@@ -45,6 +45,18 @@ body {
   transition: border-color 0.3s ease;
 }
 
+.select select option[value=""]:disabled {
+  display: none; /* Menyembunyikan opsi placeholder saat sudah ada pilihan yang dipilih */
+}
+
+.select select {
+  color: #aaa; /* Mengubah warna teks placeholder */
+}
+
+.select select:not(:placeholder-shown) {
+  color: #000; /* Mengubah warna teks saat ada pilihan yang dipilih */
+}
+
 .input:focus, .select select:focus, .textarea:focus {
   border-bottom: 2px solid #000; /* Garis bawah berubah warna saat fokus */
   outline: none; /* Hilangkan outline default */
