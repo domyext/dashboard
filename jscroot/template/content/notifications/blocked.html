@@ -6,7 +6,7 @@
     <div class="control has-icons-left">
       <div class="select is-fullwidth">
         <select id="kode" name="projectName" required>
-          <option>Pilih Proyek</option>
+          <option>Select Project</option>
           <option>Gobizid</option>
           <option>domyext-signin</option>
           <option>domyext-home</option>
@@ -24,25 +24,36 @@
   </div>
 
   <div class="field">
-    <label class="label"><i class=""></i> Judul Meeting</label>
+    <label class="label"><i class=""></i>Meeting Title</label>
     <div class="control">
       <input class="input" type="text" id="summary" placeholder="Judul Pertemuan" required>
     </div>
   </div>
 
   <div class="field">
-    <label class="label"><i class=""></i> Lokasi/Link Zoom</label>
+    <label class="label"><i class=""></i>Link Zoom</label>
     <div class="control">
       <input class="input" type="text" id="location" placeholder="Lokasi atau URL Link Zoom" required>
     </div>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <label class="label"><i class=""></i> Tahun-Bulan-Tanggal</label>
     <div class="control">
       <input class="input" type="date" id="date" required>
     </div>
+  </div> -->
+  <div class="field">
+    <label class="label">Tahun-Bulan-Tanggal</label>
+    
+    <div class="control is-flex">
+      <input class="input" type="text" id="year" placeholder="Tahun" maxlength="4" required>
+      <input class="input" type="text" id="month" placeholder="Bulan" maxlength="2" required>
+      <input class="input" type="text" id="day" placeholder="Tanggal" maxlength="2" required>
+    </div>
+    
   </div>
+  
 
   <div class="field">
     <label class="label"><i class=""></i> Jam Mulai</label>
