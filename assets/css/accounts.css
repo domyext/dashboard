@@ -1,6 +1,7 @@
 
 
 .field.is-grouped {
+  border: none;
   display: flex;
   justify-content: center; /* Meletakkan tombol di tengah secara horizontal */
   align-items: center;
@@ -49,9 +50,6 @@
   transform: scale(1.05);
 }
 
-.field.email{
-  border: none; border-bottom: 1px solid #000; width: 100%; outline: none; padding: 5px 0;
-}
   
 .box {
   width: 50%;
@@ -61,11 +59,16 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 0 auto;
+  font-family: Arial, sans-serif;
 }
 
 .field {
-  border: none;         /* Menghilangkan semua border */
-  border-bottom: 2px solid #333; /* Menambahkan garis bawah saja */
-  border-radius: 0;     /* Menghilangkan border-radius */
-  background-color: transparent; /
+  
+  border: none;
+  border-bottom: 2px solid #333; /* Menampilkan garis bawah saja */
+  border-radius: 0; /* Menghilangkan border radius */
+  background-color: transparent; /* Menghilangkan warna background */
+  outline: none; /* Menghilangkan outline saat focus */
+  box-shadow: none; /* Menghilangkan shadow */
 }
+
