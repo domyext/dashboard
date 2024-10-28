@@ -1,9 +1,13 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f7f6;
-  padding: 20px;
+
+
+.field.is-grouped {
+  display: flex;
+  justify-content: center; /* Meletakkan tombol di tengah secara horizontal */
+  align-items: center;
+  margin-top: 50px; /* Menambahkan jarak dari atas */
 }
 
+/* Gaya untuk tombol Send */
 #buttonkirimaccount {
   padding: 12px 24px;
   color: white;
@@ -15,9 +19,10 @@ body {
   border: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 10px; /* Jarak antara tombol Send dan Cancel */
 }
 
-/* Mengatur tombol Cancel dengan warna merah dan gaya khusus */
+/* Gaya untuk tombol Cancel */
 #buttonbatalaccount {
   padding: 12px 24px;
   color: white;
