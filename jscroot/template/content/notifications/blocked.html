@@ -44,15 +44,50 @@
       <input class="input" type="date" id="date" required>
     </div>
   </div> -->
-  <div class="field">
-    <label class="label">Year-Month-Date</label>
-    
-    <div class="control is-flex">
-      <input class="input" type="text" id="year" placeholder="Year" maxlength="4" required>
-      <input class="input" type="text" id="month" placeholder="Month" maxlength="2" required>
-      <input class="input" type="text" id="day" placeholder="Date" maxlength="2" required>
+  <div class="field" style="display: flex; gap: 10px;">
+    <div>
+      <label class="label" style="color: #888; font-size: 14px;">Date</label>
+      <select name="day" style="border: none; border-bottom: 1px solid #000; width: 100%; outline: none;">
+        <option value="" disabled selected hidden>Day</option>
+        <!-- Opsi tanggal dari 1 hingga 31 -->
+        <script>
+          for (let i = 1; i <= 31; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+          }
+        </script>
+      </select>
     </div>
-    
+    <div>
+      <label class="label" style="color: #888; font-size: 14px;">Month</label>
+      <select name="month" style="border: none; border-bottom: 1px solid #000; width: 100%; outline: none;">
+        <option value="" disabled selected hidden>Month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </div>
+    <div>
+      <label class="label" style="color: #888; font-size: 14px;">Year</label>
+      <select name="year" style="border: none; border-bottom: 1px solid #000; width: 100%; outline: none;">
+        <option value="" disabled selected hidden>Year</option>
+        <!-- Opsi tahun dari 1900 hingga tahun saat ini -->
+        <script>
+          const currentYear = new Date().getFullYear();
+          for (let i = currentYear; i >= 1900; i--) {
+            document.write(`<option value="${i}">${i}</option>`);
+          }
+        </script>
+      </select>
+    </div>
   </div>
   
 
