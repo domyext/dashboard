@@ -21,7 +21,6 @@
 }
 
 .field {
-<<<<<<< HEAD
   margin-bottom: 1.5rem;
 }
 
@@ -46,18 +45,11 @@
 
 .icon.is-left {
   left: 10px;
-=======
   margin-bottom: 20px;
->>>>>>> e598ebf3dc7a8b2fbdaab2d5e82f0d497d7c5a98
 }
 
 .label {
   font-weight: 600;
-<<<<<<< HEAD
-  color: #4a4a4a;
-}
-
-=======
   color: #5a67d8;
   text-align: left;
 }
@@ -83,4 +75,3 @@
 .icon.is-left {
   left: 10px;
 }
->>>>>>> e598ebf3dc7a8b2fbdaab2d5e82f0d497d7c5a98
