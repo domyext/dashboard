@@ -4,19 +4,45 @@ body {
   padding: 20px;
 }
 
+#buttonkirimaccount {
+  padding: 12px 24px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mengatur tombol Cancel dengan warna merah dan gaya khusus */
+#buttonbatalaccount {
+  padding: 12px 24px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: #FF5F67;
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek hover untuk tombol Send */
 #buttonkirimaccount:hover {
-    background-color: #3273dc; /* Ubah ke warna yang lebih terang untuk hover */
-    color: #fff;
-    transform: scale(1.05); /* Sedikit membesarkan tombol saat di-hover */
-    transition: all 0.2s ease-in-out;
-  }
-  
-  #buttonbatalaccount:hover {
-    background-color: #ff3860; /* Ubah ke warna yang lebih terang untuk hover */
-    color: #fff;
-    transform: scale(1.05); /* Sedikit membesarkan tombol saat di-hover */
-    transition: all 0.2s ease-in-out;
-  }
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Efek hover untuk tombol Cancel */
+#buttonbatalaccount:hover {
+  background-color: #e54c54;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
   
 .box {
   width: 50%;
