@@ -48,6 +48,10 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
+
+.field.email{
+  border: none; border-bottom: 1px solid #000; width: 100%; outline: none; padding: 5px 0;
+}
   
 .box {
   width: 50%;
@@ -57,4 +61,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 0 auto;
+}
+
+.field {
+  border: none;         /* Menghilangkan semua border */
+  border-bottom: 2px solid #333; /* Menambahkan garis bawah saja */
+  border-radius: 0;     /* Menghilangkan border-radius */
+  background-color: transparent; /
 }
