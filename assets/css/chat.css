@@ -42,20 +42,20 @@ body {
   padding: 10px;
   margin-bottom: 10px;
   width: fit-content;
-  background-color: #00d1b2;
+  background-color: #0072ff;
   max-width: 70%;
   border-radius: 10px 0 10px 10px;
 }
 
 .chat-message.user {
   align-self: flex-end;
-  background-color: #00d1b2;
+  background-color: #0072ff;
   color: white;
 }
 
 .message.sent {
   align-self: flex-end;
-  background-color: #00d1b2;
+  background-color: #0072ff;
   border-radius: 10px 0 10px 10px;
   color: white;
 }

@@ -52,11 +52,18 @@ function getUserFunction(result) {
 }
 
 function getUserTaskFunction(result) {
-  setInner("list", "");
-  setInner("bigtodo", "0");
-  if (result.status === 200) {
-    setInner("bigtodo", result.data.length.toString());
+  setInner("list", ""); // Bersihkan daftar To Do
+  const todoElement = document.getElementById("bigtodo");
+
+  if (result.status === 200 && todoElement) {
+    // Perbarui teks jumlah tugas
+    todoElement.textContent = result.data.length.toString();
+
+    // Isi daftar tugas
     result.data.forEach(isiTaskList);
+  } else {
+    // Jika tidak ada tugas, set ke 0
+    todoElement.textContent = "0";
   }
 }
 
@@ -108,19 +115,29 @@ function putTaskFunction(result) {
 }
 
 function getUserDoingFunction(result) {
-  setInner("doing", "");
-  setInner("bigdoing", "0");
-  if (result.status === 200) {
-    setInner("bigdoing", "OTW");
-    let content = tableTemplate
-      .replace("#TASKNAME#", result.data.task)
-      .replace("#TASKID#", result.data._id)
-      .replace("#LABEL#", "Beres");
-    addChild("doing", "tr", "", content);
-    // Jalankan logika tambahan setelah addChild
-    runAfterAddChildDoing(result.data);
+  setInner("doing", ""); // Bersihkan daftar Doing
+  const doingElement = document.getElementById("bigdoing");
+
+  if (result.status === 200 && doingElement) {
+    // Perbarui teks status Doing
+    doingElement.textContent = "OTW"; // Atau bisa juga menggunakan result.data.length.toString() jika ingin menunjukkan jumlah
+
+    // Jika ada data tugas, tambahkan ke daftar Doing
+    if (result.data && result.data.task) {
+      let content = tableTemplate
+        .replace("#TASKNAME#", result.data.task)
+        .replace("#TASKID#", result.data._id)
+        .replace("#LABEL#", "Beres");
+      addChild("doing", "tr", "", content);
+      // Jalankan logika tambahan setelah addChild
+      runAfterAddChildDoing(result.data);
+    }
+  } else {
+    // Jika tidak ada tugas, set ke 0
+    doingElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
   }
 }
+
 
 function runAfterAddChildDoing(value) {
   // Temukan elemen tr yang baru saja ditambahkan
@@ -160,14 +177,23 @@ function postTaskFunction(result) {
 }
 
 function getUserDoneFunction(result) {
-  setInner("done", "");
-  setInner("bigdone", "0");
-  if (result.status === 200) {
-    setInner("bigdone", "OK");
-    let content = tableTemplate
-      .replace("#TASKNAME#", result.data.task)
-      .replace("#TASKID#", result.data._id)
-      .replace("#LABEL#", "Arsip");
-    addChild("done", "tr", "", content);
+  setInner("done", ""); // Bersihkan daftar Done
+  const doneElement = document.getElementById("bigdone");
+
+  if (result.status === 200 && doneElement) {
+    // Perbarui teks status Done
+    doneElement.textContent = "OK"; // Atau jika ingin menunjukkan jumlah tugas yang sudah selesai, gunakan result.data.length.toString()
+
+    // Jika ada data tugas, tambahkan ke daftar Done
+    if (result.data && result.data.task) {
+      let content = tableTemplate
+        .replace("#TASKNAME#", result.data.task)
+        .replace("#TASKID#", result.data._id)
+        .replace("#LABEL#", "Arsip");
+      addChild("done", "tr", "", content);
+    }
+  } else {
+    // Jika tidak ada tugas, set ke 0
+    doneElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
   }
 }
