@@ -1,0 +1,14 @@
+#buttonkirimaccount:hover {
+    background-color: #3273dc; /* Ubah ke warna yang lebih terang untuk hover */
+    color: #fff;
+    transform: scale(1.05); /* Sedikit membesarkan tombol saat di-hover */
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #buttonbatalaccount:hover {
+    background-color: #ff3860; /* Ubah ke warna yang lebih terang untuk hover */
+    color: #fff;
+    transform: scale(1.05); /* Sedikit membesarkan tombol saat di-hover */
+    transition: all 0.2s ease-in-out;
+  }
+  
