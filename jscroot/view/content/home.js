@@ -21,16 +21,27 @@ let tableTemplate = `
 `;
 
 export async function main() {
-  await addCSSIn("assets/css/admin.css", id.content);
-  getJSON(backend.user.data, "login", getCookie("login"), getUserFunction);
-  getJSON(backend.user.todo, "login", getCookie("login"), getUserTaskFunction);
-  getJSON(
-    backend.user.doing,
-    "login",
-    getCookie("login"),
-    getUserDoingFunction
-  );
-  getJSON(backend.user.done, "login", getCookie("login"), getUserDoneFunction);
+  // Show loader and hide content initially
+  document.getElementById("content").classList.add("hidden");
+  document.querySelector(".loader-anim").classList.remove("hidden");
+
+  // Fetch all required data
+  try {
+    await addCSSIn("assets/css/admin.css", id.content);
+    await Promise.all([
+      getJSON(backend.user.data, "login", getCookie("login"), getUserFunction),
+      getJSON(backend.user.todo, "login", getCookie("login"), getUserTaskFunction),
+      getJSON(backend.user.doing, "login", getCookie("login"), getUserDoingFunction),
+      getJSON(backend.user.done, "login", getCookie("login"), getUserDoneFunction),
+    ]);
+
+    // Hide loader and show content after data is fetched
+    document.getElementById("content").classList.remove("hidden");
+    document.querySelector(".loader-anim").classList.add("hidden");
+  } catch (error) {
+    console.error("Data fetching failed:", error);
+    // Optionally handle error
+  }
 }
 
 function getUserFunction(result) {
