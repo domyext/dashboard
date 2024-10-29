@@ -19,6 +19,7 @@
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-right: 10px; /* Jarak antara tombol Send dan Cancel */
+  style: center ;
 }
 
 /* Gaya untuk tombol Cancel */
@@ -33,12 +34,14 @@
   border: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
 }
 
 /* Efek hover untuk tombol Send */
 #buttonkirimaccount:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
+  padding-right: 50%;
 }
 
 /* Efek hover untuk tombol Cancel */
@@ -63,7 +66,7 @@
 
 #email{
   border: none; 
-  border-bottom: 1px solid #000; 
+  border-bottom: 3px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
@@ -73,7 +76,7 @@
 
 #githubusername{
   border: none; 
-  border-bottom: 1px solid #000; 
+  border-bottom: 3px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
@@ -83,7 +86,7 @@
 
 #gitlabusername{
   border: none; 
-  border-bottom: 1px solid #000; 
+  border-bottom: 3px solid #000; 
   width: 100%; 
   outline: none; 
   padding: 5px 0;
@@ -94,7 +97,7 @@
 
 #githostusername{
   border: none; 
-  border-bottom: 1px solid #000; 
+  border-bottom: 3px solid #000; 
   width: 100%; 
   outline: none; 
   padding: 5px 0;
