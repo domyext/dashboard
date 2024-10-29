@@ -113,3 +113,7 @@
   color: #aaa; 
   opacity: 1; 
 }
+
+.field > .label {
+  font-size: 15px;
+}
