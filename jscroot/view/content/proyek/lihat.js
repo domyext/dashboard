@@ -10,28 +10,37 @@ import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.7/croot.js"
 import { getCookie } from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
 import { addCSSIn } from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.5/croot.js";
 import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js";
-import { id, backend } from "/dashboard/jscroot/url/config.js";
+import { id, backend } from "../../../url/config.js";
 import { loadScript } from "../../../controller/main.js";
 import { truncateText, addRevealTextListeners } from "../../utils.js";
 
 let dataTable;
 
 export async function main() {
-  await addCSSIn(
-    "https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css",
-    id.content
-  );
-  await addCSSIn("assets/css/custom.css", id.content);
-  await addCSSIn("assets/css/lihat.css", id.content);
-  await loadScript("https://code.jquery.com/jquery-3.6.0.min.js");
-  await loadScript("https://cdn.datatables.net/2.0.8/js/dataTables.min.js");
+  try {
+    await addCSSIn(
+      "https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css",
+      id.content
+    );
+    await addCSSIn("assets/css/custom.css", id.content);
+    await addCSSIn("assets/css/lihat.css", id.content);
+    await loadScript("https://code.jquery.com/jquery-3.6.0.min.js");
+    await loadScript("https://cdn.datatables.net/2.0.8/js/dataTables.min.js");
+  
+    getJSON(
+      backend.project.data,
+      "login",
+      getCookie("login"),
+      getResponseFunction
+    );
 
-  getJSON(
-    backend.project.data,
-    "login",
-    getCookie("login"),
-    getResponseFunction
-  );
+    // Hide loader and show content after data is fetched
+    document.getElementById("content").classList.remove("hidden");
+    document.querySelector(".loader-anim").classList.add("hidden");
+  } catch (error) {
+    console.error("Data fetching failed:", error);
+    // Optionally handle error
+  }
 }
 
 function reloadDataTable() {
