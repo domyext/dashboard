@@ -63,3 +63,23 @@
   color: #aaa;
   opacity: 1; 
 }
+
+/* Gaya untuk tombol Send */
+#buttonkirimfeedback{
+  padding: 12px 24px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek hover untuk tombol Send */
+#buttonkirimfeedback:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
