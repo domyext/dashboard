@@ -1,5 +1,3 @@
-
-
 .field.is-grouped {
   border: none;
   display: flex;
@@ -62,13 +60,24 @@
   font-family: Arial, sans-serif;
 }
 
-.field {
-  
-  border: none;
-  border-bottom: 2px solid #333; /* Menampilkan garis bawah saja */
-  border-radius: 0; /* Menghilangkan border radius */
-  background-color: transparent; /* Menghilangkan warna background */
-  outline: none; /* Menghilangkan outline saat focus */
-  box-shadow: none; /* Menghilangkan shadow */
+.input {
+  border: none; /* Remove the default border */
+  border-bottom: 1px solid #000; /* Add an underline */
+  outline: none; /* Remove the outline on focus */
+  padding: 5px 0; /* Vertical padding only, no left/right padding */
+  width: 100%; /* Set the width to 100% to fill the container */
+  margin-left: 10px; /* Add left margin to shift the border right */
+  background-color: transparent; /* Make background transparent */
+  color: #333; /* Set text color */
+}
+
+.input::placeholder {
+  border: none; 
+  border-bottom: 1px solid #000; 
+  width: 100%; outline: none; 
+  padding: 5px 0;
+  border-right: 50%;
+  color: #aaa; /* Placeholder color */
+  opacity: 1; /* Ensure placeholder is visible */
 }
 
