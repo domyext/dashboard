@@ -60,24 +60,45 @@
   font-family: Arial, sans-serif;
 }
 
-.input {
-  border: none; /* Remove the default border */
-  border-bottom: 1px solid #000; /* Add an underline */
-  outline: none; /* Remove the outline on focus */
-  padding: 5px 0; /* Vertical padding only, no left/right padding */
-  width: 100%; /* Set the width to 100% to fill the container */
-  margin-left: 10px; /* Add left margin to shift the border right */
-  background-color: transparent; /* Make background transparent */
-  color: #333; /* Set text color */
-}
 
-.input::placeholder {
+#email{
   border: none; 
   border-bottom: 1px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
-  color: #aaa; /* Placeholder color */
-  opacity: 1; /* Ensure placeholder is visible */
+  color: #aaa;
+  opacity: 1; 
 }
 
+#githubusername{
+  border: none; 
+  border-bottom: 1px solid #000; 
+  width: 100%; outline: none; 
+  padding: 5px 0;
+  border-right: 50%;
+  color: #aaa;
+  opacity: 1; 
+}
+
+#gitlabusername{
+  border: none; 
+  border-bottom: 1px solid #000; 
+  width: 100%; 
+  outline: none; 
+  padding: 5px 0;
+  border-right: 50%;
+  color: #aaa; 
+  opacity: 1; 
+}
+
+#githostusername{
+  border: none; 
+  border-bottom: 1px solid #000; 
+  width: 100%; 
+  outline: none; 
+  padding: 5px 0;
+  border-right: 50%;
+  color: #aaa; 
+  opacity: 1; 
+}
