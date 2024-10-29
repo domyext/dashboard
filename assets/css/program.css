@@ -46,7 +46,7 @@
 
 #nama{
   border: none; 
-  border-bottom: 1px solid #000; 
+  border-bottom: 3px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
@@ -56,7 +56,7 @@
 
 #phone{
   border: none; 
-  border-bottom: 1px solid #000; 
+  border-bottom: 3px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
