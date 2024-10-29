@@ -19,7 +19,6 @@
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-right: 10px; /* Jarak antara tombol Send dan Cancel */
-  style: center ;
 }
 
 /* Gaya untuk tombol Cancel */
