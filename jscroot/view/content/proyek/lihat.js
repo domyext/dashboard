@@ -17,6 +17,9 @@ import { truncateText, addRevealTextListeners } from "../../utils.js";
 let dataTable;
 
 export async function main() {
+  document.getElementById("content").classList.add("hidden");
+  document.querySelector(".loader-anim").classList.remove("hidden");
+  
   try {
     await addCSSIn(
       "https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.css",
