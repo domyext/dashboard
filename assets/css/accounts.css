@@ -1,3 +1,5 @@
+
+
 .field.is-grouped {
   border: none;
   display: flex;
@@ -6,7 +8,6 @@
   margin-top: 50px; /* Menambahkan jarak dari atas */
 }
 
-/* Gaya untuk tombol Send */
 #buttonkirimaccount {
   padding: 12px 24px;
   color: white;
@@ -18,8 +19,7 @@
   border: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-right: 10px; /* Jarak antara tombol Send dan Cancel */
-  style: center ;
+  
 }
 
 /* Gaya untuk tombol Cancel */
@@ -41,7 +41,7 @@
 #buttonkirimaccount:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
-  padding-right: 50%;
+ 
 }
 
 /* Efek hover untuk tombol Cancel */
@@ -49,12 +49,20 @@
   background-color: #e54c54;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
+  
+}
+
+.button-container {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Space between buttons */
+  margin-top: 20px; /* Optional: space above the buttons */
 }
 
   
 .box {
   width: 50%;
-  background: white;
+  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
