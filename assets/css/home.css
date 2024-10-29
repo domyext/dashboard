@@ -10,3 +10,15 @@
   transform: translateY(-1px);      /* Sedikit mengangkat elemen ke atas */
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Bayangan lebih tebal saat hover */
 }
+
+.card {
+  border: 1px solid #d3d3d3;              /* Border halus */
+  border-radius: 8px;                     /* Membulatkan sudut */
+  margin: 15px 0;                         /* Jarak antar card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk gerakan dan bayangan */
+}
+
+.card:hover {
+  transform: translateY(-1px);            /* Sedikit mengangkat card ke atas */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Bayangan lebih tebal saat hover */
+}
