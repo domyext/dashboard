@@ -39,6 +39,12 @@ body {
   border-radius: 50%;
 }
 
+.loader-anim {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
 .svg{
   height: 100px;
   width: 100px;
@@ -49,7 +55,7 @@ body {
   fill: none ;
   stroke-dasharray: 251;
   stroke-dashoffset: 251;
-  animation: loading 3s infinite linear ;
+  animation: loading 1s infinite linear ;
 }
 
 @keyframes loading {
