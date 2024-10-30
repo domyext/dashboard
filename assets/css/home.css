@@ -25,6 +25,14 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk gerakan dan bayangan */
 }
 
+.card-header {
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah lembut */
+}
+
+.table td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
 .subtitle {
   font-family: 'Segoe UI', Tahoma, sans-serif; /* Font tipis dan bersih */
   font-size: 0.9rem;
