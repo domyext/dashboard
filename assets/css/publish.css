@@ -23,7 +23,9 @@
 .field {
   margin-bottom: 1.5rem;
 }
-
+.control{
+  border-bottom: 1px solid #000; padding-bottom: 5px;
+}
 .control .textarea:focus,
 .control .input:focus {
   border-color: #3273dc;
@@ -52,6 +54,7 @@
   font-weight: 600;
   color: #5a67d8;
   text-align: left;
+  font-size: 14px;
 }
 
 .select,
