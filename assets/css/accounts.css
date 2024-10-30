@@ -74,7 +74,7 @@
 
 #email{
   border: none; 
-  border-bottom: 3px solid #000; 
+  border-bottom: 1px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
@@ -84,7 +84,7 @@
 
 #githubusername{
   border: none; 
-  border-bottom: 3px solid #000; 
+  border-bottom:1px solid #000; 
   width: 100%; outline: none; 
   padding: 5px 0;
   border-right: 50%;
@@ -94,7 +94,7 @@
 
 #gitlabusername{
   border: none; 
-  border-bottom: 3px solid #000; 
+  border-bottom: 1px solid #000; 
   width: 100%; 
   outline: none; 
   padding: 5px 0;
@@ -105,7 +105,7 @@
 
 #githostusername{
   border: none; 
-  border-bottom: 3px solid #000; 
+  border-bottom: 1px solid #000; 
   width: 100%; 
   outline: none; 
   padding: 5px 0;
