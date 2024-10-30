@@ -72,7 +72,7 @@ async function actionfunctionname() {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${getCookie("login")}`
+                    "Login": `${getCookie("login")}`
                 },
                 body: JSON.stringify(event)
             });
