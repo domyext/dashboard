@@ -14,6 +14,13 @@ body {
   color: #007bff;  /* Warna biru untuk judul */
   font-weight: bold;  /* Membuat teks lebih tebal */
   margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background: black;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 
