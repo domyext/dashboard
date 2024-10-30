@@ -12,8 +12,9 @@
   font-weight: 700;
   color: #3273dc;
   margin-bottom: 20px;
-  margin-right: 10px; /* Ruang antara ikon dan teks judul */
-  font-size: 1.5rem; /* Ukuran ikon */
+  margin-right: 10px; 
+  font-size: 1.5rem; 
+  font-family: Arial, sans-serif;
 
 }
 
@@ -42,6 +43,7 @@
 .label {
   font-weight: 600;
   color: #4a4a4a;
+ 
 }
 
 #nama{
