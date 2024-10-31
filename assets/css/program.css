@@ -49,7 +49,8 @@
 #nama{
   border: none; 
   border-bottom: 1px solid #000; 
-  width: 100%; outline: none; 
+  width: 100%; 
+  outline: none; 
   padding: 5px 0;
   border-right: 50%;
   color: #aaa;
@@ -59,7 +60,30 @@
 #phone{
   border: none; 
   border-bottom: 1px solid #000; 
-  width: 100%; outline: none; 
+  width: 100%; 
+  outline: none; 
+  padding: 5px 0;
+  border-right: 50%;
+  color: #aaa;
+  opacity: 1; 
+}
+
+#kode{
+  border: none; 
+  border-bottom: 1px solid #000; 
+  width: 100%; 
+  outline: none; 
+  padding: 5px 0;
+  border-right: 50%;
+  color: #aaa;
+  opacity: 1; 
+}
+
+#solusi{
+  border: none; 
+  border-bottom: 1px solid #000; 
+  width: 100%; 
+  outline: none; 
   padding: 5px 0;
   border-right: 50%;
   color: #aaa;
