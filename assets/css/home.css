@@ -2,8 +2,6 @@
   color: #3498db; /* Aksen biru muda */
 }
 
-
-
 .tile.is-parent {
   border: 1px solid #d3d3d3; /* Border halus */
   border-radius: 8px; /* Membulatkan sudut */
@@ -14,8 +12,8 @@
 
 .tile.is-parent:hover,
 .card:hover {
-  transform: translateY(-1px); /* Sedikit mengangkat elemen ke atas */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Bayangan lebih tebal saat hover */
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card {
@@ -38,7 +36,6 @@
   font-size: 0.9rem;
   color: #666; /* Warna lembut */
 }
-
 
 .loader-anim {
   display: flex;
