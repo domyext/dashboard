@@ -1,10 +1,11 @@
-
 .tile.is-parent {
-  border: 1px solid #d3d3d3; /* Border halus */
-  border-radius: 8px; /* Membulatkan sudut */
-  padding: 15px; /* Jarak dalam tile */
-  margin: 10px; /* Jarak antar tile */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk gerakan dan bayangan */
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Tambahan */
+  background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Gradient background */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.5); /* Bayangan */
 }
 
 .tile.is-parent:hover,
@@ -34,10 +35,18 @@
   color: #666; /* Warna lembut */
 }
 
-#todoIcon i { color: #3498db; } /* To Do */
-#doingIcon i { color: #f39c12; } /* Doing */
-#doneIcon i { color: #2ecc71; } /* Done */
-#poinIcon i { color: #e67e22; } /* Poin */
+#todoIcon i {
+  color: #3498db;
+} /* To Do */
+#doingIcon i {
+  color: #f39c12;
+} /* Doing */
+#doneIcon i {
+  color: #2ecc71;
+} /* Done */
+#poinIcon i {
+  color: #e67e22;
+} /* Poin */
 
 .loader-anim {
   display: flex;
