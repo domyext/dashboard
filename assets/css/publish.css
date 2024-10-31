@@ -78,3 +78,10 @@
 .icon.is-left {
   left: 10px;
 }
+
+#kode {
+  border: none;
+  width: 100%;
+  color: #000;
+  outline: none;
+}
