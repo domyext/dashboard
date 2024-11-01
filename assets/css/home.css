@@ -37,6 +37,7 @@
   font-family: 'Segoe UI', Tahoma, sans-serif; /* Font tipis dan bersih */
   font-size: 0.9rem;
   color: #666; /* Warna lembut */
+  letter-spacing: 0.5px;
 }
 
 #todoIcon i {
