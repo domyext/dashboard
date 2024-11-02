@@ -114,25 +114,24 @@
   display: none;
 }
 
-.table-fixed thead{
-  background-color: #b0b0b0;
-  table-layout: auto;
-  text-align: center; 
+.table-container{
+  overflow-x:auto;
 }
 
-.table-fixed thead th {
+.table thead th {
+  background-color: #c0c0c0;
   color: #000000; 
   font-weight: bold; 
   padding: 10px; 
 }
 
-.table-fixed thead th:first-child {
+.table thead th:first-child {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
 
 /* Membulatkan hanya ujung kanan */
-.table-fixed thead th:last-child {
+.table thead th:last-child {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
