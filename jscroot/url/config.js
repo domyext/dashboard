@@ -20,7 +20,6 @@ export const backend = {
     project: {
         data: `${baseAPIURL}/data/proyek`,
         anggota: `${baseAPIURL}/data/proyek/anggota`,
-        history: `${baseAPIURL}/data/proyek/history` // Tambahkan ini untuk commit history
     },
     ux: {
         feedback: `${baseAPIURL}/notif/ux/postfeedback`,
