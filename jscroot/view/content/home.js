@@ -38,6 +38,8 @@ export async function main() {
     ]);
 
     fetchFeedbackHistory();
+    fetchCommitHistory();
+
 
     // Hide loader and show content after data is fetched
     document.getElementById("content").classList.remove("hidden");
@@ -260,6 +262,51 @@ function displayFeedbackHistory(data) {
     ratingCell.textContent = item.rating || 'No Rating';
     row.appendChild(ratingCell);
 
+    // Append row to the table
+    uxHistoryTable.appendChild(row);
+  });
+}
+
+function fetchCommitHistory() {
+  fetch(backend.project.getcommithistory, {
+    method: 'GET',
+    headers: {
+      'login': `${token}`,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    displayCommitHistory(data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+}
+// Function to display feedback history in the table
+function displayCommitHistory(data) {
+  const uxHistoryTable = document.getElementById('logcommit');
+  // Clear existing rows
+  uxHistoryTable.innerHTML = '';
+  data.forEach(item => {
+    const row = document.createElement('tr');
+    // Solution column
+    const solutionCell = document.createElement('td');
+    solutionCell.textContent = item.projectid || 'No Project Provided';
+    row.appendChild(solutionCell);
+    // Comment column
+    const commentCell = document.createElement('td');
+    commentCell.textContent = item.detail || 'No Details';
+    row.appendChild(commentCell);
+    // Rating column
+    const ratingCell = document.createElement('td');
+    ratingCell.textContent = item.url || 'No URL';
+    row.appendChild(ratingCell);
     // Append row to the table
     uxHistoryTable.appendChild(row);
   });
