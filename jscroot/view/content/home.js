@@ -20,6 +20,8 @@ let tableTemplate = `
 </td>
 `;
 
+const token = getCookie("login");
+
 export async function main() {
   // Show loader and hide content initially
   document.getElementById("content").classList.add("hidden");
@@ -34,6 +36,8 @@ export async function main() {
       getJSON(backend.user.doing, "login", getCookie("login"), getUserDoingFunction),
       getJSON(backend.user.done, "login", getCookie("login"), getUserDoneFunction),
     ]);
+
+    fetchFeedbackHistory();
 
     // Hide loader and show content after data is fetched
     document.getElementById("content").classList.remove("hidden");
@@ -207,4 +211,56 @@ function getUserDoneFunction(result) {
     // Jika tidak ada tugas, set ke 0
     doneElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
   }
+}
+
+function fetchFeedbackHistory() {
+  fetch(backend.ux.getReportData, {
+    method: 'GET',
+    headers: {
+      'login': `${token}`,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    displayFeedbackHistory(data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+// Function to display feedback history in the table
+function displayFeedbackHistory(data) {
+  const uxHistoryTable = document.getElementById('uxhistory');
+
+  // Clear existing rows
+  uxHistoryTable.innerHTML = '';
+
+  data.forEach(item => {
+    const row = document.createElement('tr');
+
+    // Solution column
+    const solutionCell = document.createElement('td');
+    solutionCell.textContent = item.solusi || 'No Solution Provided';
+    row.appendChild(solutionCell);
+
+    // Comment column
+    const commentCell = document.createElement('td');
+    commentCell.textContent = item.komentar || 'No Comment';
+    row.appendChild(commentCell);
+
+    // Rating column
+    const ratingCell = document.createElement('td');
+    ratingCell.textContent = item.rating || 'No Rating';
+    row.appendChild(ratingCell);
+
+    // Append row to the table
+    uxHistoryTable.appendChild(row);
+  });
 }
