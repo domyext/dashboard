@@ -20,13 +20,6 @@ let tableTemplate = `
 </td>
 `;
 
-let commitTemplate = `
-  <td>#PROJECTNAME#</td>
-  <td>#DETAIL#</td>
-  <td><a href="#URL#" target="_blank">Link</a></td>
-  <td><button class="button">Ambil</button></td> 
-`;
-
 export async function main() {
   // Show loader and hide content initially
   document.getElementById("content").classList.add("hidden");
@@ -87,22 +80,12 @@ function getUserTaskFunction(result) {
 
 function isiTaskList(value) {
   let content = tableTemplate
-    .replace("#PROJECTNAME#", value.task)
-    .replace("#DETAIL#", value._id)
-    .replace("#URL#", value.url)
+    .replace("#TASKNAME#", value.task)
+    .replace("#TASKID#", value._id)
+    .replace("#LABEL#", "Ambil");
   addChild("list", "tr", "", content);
   // Jalankan logika tambahan setelah addChild
   runAfterAddChild(value);
-}
-
-function addChild(parentId, elementTag, elementId, htmlContent) {
-  const parent = document.getElementById(parentId);
-  if (parent) {
-    const newElement = document.createElement(elementTag);
-    if (elementId) newElement.id = elementId;
-    newElement.innerHTML = htmlContent;
-    parent.appendChild(newElement);
-  }
 }
 
 function runAfterAddChild(value) {
