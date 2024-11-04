@@ -212,26 +212,25 @@ function getUserDoneFunction(result) {
 
 async function getCommitHistory() {
   try {
-      const result = await getJSON(backend.project.history, "login", getCookie("login"));
-      if (result.status === 200 && result.data.length > 0) {
-          const historyElement = document.getElementById("list");
-          historyElement.innerHTML = ""; // Kosongkan daftar commit
+    const result = await getJSON(backend.project.history, "login", getCookie("login"));
+    if (result.status === 200 && result.data.length > 0) {
+      const historyElement = document.getElementById("commitList"); // Ganti "list" menjadi "commitList"
+      historyElement.innerHTML = ""; // Kosongkan daftar commit
 
-          // Tampilkan data commit di elemen "list"
-          result.data.forEach(commit => {
-              const row = `
-                  <tr>
-                      <td>${commit.projectName}</td>
-                      <td>${commit.detail}</td>
-                      <td><a href="${commit.url}" target="_blank">Lihat</a></td>
-                  </tr>
-              `;
-              historyElement.insertAdjacentHTML("beforeend", row);
-          });
-      } else {
-          console.log("Tidak ada data commit history");
-      }
+      result.data.forEach(commit => {
+        const row = `
+          <tr>
+            <td>${commit.projectName}</td>
+            <td>${commit.detail}</td>
+            <td><a href="${commit.url}" target="_blank">Lihat</a></td>
+          </tr>
+        `;
+        historyElement.insertAdjacentHTML("beforeend", row);
+      });
+    } else {
+      console.log("Tidak ada data commit history");
+    }
   } catch (error) {
-      console.error("Gagal mengambil data commit history:", error);
+    console.error("Gagal mengambil data commit history:", error);
   }
 }
