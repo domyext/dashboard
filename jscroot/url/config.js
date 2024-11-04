@@ -26,6 +26,7 @@ export const backend = {
         laporan: `${baseAPIURL}/notif/ux/postlaporan`,
         rating: `${baseAPIURL}/notif/ux/rating`,
         meeting: `${baseAPIURL}/notif/ux/postmeeting`,
+        getReportData: `${baseAPIURL}/notif/ux/getreportdata`,
     }
 }
 
