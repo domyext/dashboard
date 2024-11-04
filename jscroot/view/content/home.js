@@ -33,7 +33,6 @@ export async function main() {
       getJSON(backend.user.todo, "login", getCookie("login"), getUserTaskFunction),
       getJSON(backend.user.doing, "login", getCookie("login"), getUserDoingFunction),
       getJSON(backend.user.done, "login", getCookie("login"), getUserDoneFunction),
-      getCommitHistory() // Panggil fungsi ini
     ]);
 
     // Hide loader and show content after data is fetched
@@ -207,30 +206,5 @@ function getUserDoneFunction(result) {
   } else {
     // Jika tidak ada tugas, set ke 0
     doneElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
-  }
-}
-
-async function getCommitHistory() {
-  try {
-    const result = await getJSON(backend.project.history, "login", getCookie("login"));
-    if (result.status === 200 && result.data.length > 0) {
-      const historyElement = document.getElementById("commitList"); // Ganti "list" menjadi "commitList"
-      historyElement.innerHTML = ""; // Kosongkan daftar commit
-
-      result.data.forEach(commit => {
-        const row = `
-          <tr>
-            <td>${commit.projectName}</td>
-            <td>${commit.detail}</td>
-            <td><a href="${commit.url}" target="_blank">Lihat</a></td>
-          </tr>
-        `;
-        historyElement.insertAdjacentHTML("beforeend", row);
-      });
-    } else {
-      console.log("Tidak ada data commit history");
-    }
-  } catch (error) {
-    console.error("Gagal mengambil data commit history:", error);
   }
 }
