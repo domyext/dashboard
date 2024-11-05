@@ -1,72 +1,67 @@
+/* Container styling */
 .form-container {
   max-width: 600px;
   margin: 0 auto;
-  text-align: center;
   padding: 40px;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  font-weight: bold;
-  background: black;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  text-align: center;
 }
 
+/* Title styling */
 .title {
-  text-align: center;
   font-weight: 700;
   color: #38c7db;
   margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
+/* Description styling */
 .description {
   color: #a0aec0;
   margin-bottom: 30px;
 }
 
+/* Field styling */
 .field {
   margin-bottom: 1.5rem;
 }
 
-.control .textarea:focus,
-.control .input:focus {
+/* Label styling */
+.label {
+  font-weight: 600;
+  color: #4a4a4a;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Input and textarea styling */
+#solusi, #kode {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  outline: none;
+  padding: 5px 0;
+  color: #333;
+}
+
+/* Input focus styling */
+.control .textarea:focus, .control .input:focus {
   border-color: #3273dc;
   box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
-  display: inline-block;
   padding: 12px 24px;
   width: 200px;
 }
 
-.button.is-primary:hover {
-  background-color: #276cda;
-
- 
-}
-
-.button.is-light:hover {
-  background-color: #f5f5f5;
-}
-
-.icon.is-left {
-  left: 10px;
-  margin-bottom: 20px;
-}
-
-.label {
-  font-weight: 600;
-  color: #5a67d8;
-  text-align: left;
-  font-size: 14px;
-}
-
-.select,
-.textarea {
+/* Select and textarea styling */
+.select, .textarea {
   border-radius: 8px;
 }
 
+/* Button styling */
 .button.is-primary {
   background-color: #5a67d8;
   border: none;
@@ -74,19 +69,42 @@
   font-weight: 700;
   padding: 10px 20px;
   border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .button.is-primary:hover {
   background-color: #667eea;
 }
 
-.icon.is-left {
-  left: 10px;
+/* Send button styling */
+#buttonkirimfeedback {
+  padding: 15px 45px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#kode {
-  border: none;
-  width: 100%;
-  color: #000;
-  outline: none;
+#buttonkirimfeedback:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Grouped field styling */
+.field.is-grouped {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icon positioning */
+.icon.is-left {
+  left: 10px;
+  margin-bottom: 20px;
 }
