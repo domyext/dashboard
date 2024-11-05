@@ -1,6 +1,6 @@
 
 
-.field.is-grouped {
+.field.is-grouped  {
   border: none;
   display: flex;
   justify-content: center; /* Meletakkan tombol di tengah secara horizontal */
