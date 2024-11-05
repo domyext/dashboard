@@ -1,13 +1,4 @@
 
-
-.field.is-grouped  {
-  border: none;
-  display: flex;
-  justify-content: center; /* Meletakkan tombol di tengah secara horizontal */
-  align-items: center;
-  margin-top: 50px; /* Menambahkan jarak dari atas */
-}
-
 #buttonkirimaccount {
   padding: 15px 45px;
   color: white;
@@ -19,7 +10,6 @@
   border: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
 }
 
 /* Gaya untuk tombol Cancel */
@@ -33,15 +23,13 @@
   background-color: #FF5F67;
   border: none;
   transition: 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
- 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 /* Efek hover untuk tombol Send */
 #buttonkirimaccount:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
- 
 }
 
 /* Efek hover untuk tombol Cancel */
