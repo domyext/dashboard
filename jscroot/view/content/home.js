@@ -40,7 +40,8 @@ export async function main() {
     fetchFeedbackHistory();
     fetchCommitHistory();
     fetchCommitStat();
-
+    fetchFeedbackStat();
+    
     // Hide loader and show content after data is fetched
     document.getElementById("content").classList.remove("hidden");
     document.querySelector(".loader-anim").classList.add("hidden");
@@ -362,5 +363,58 @@ function renderCommitChart(projectIds, commitCounts) {
   };
 
   Plotly.newPlot('comChart', [trace], layout, config);
+
+}
+
+async function fetchFeedbackStat() {
+  try {
+      const response = await fetch(backend.stats.feedback, {
+          method: 'GET',
+          headers: {
+            'login': `${token}`,
+            'Content-Type': 'application/json'
+          }
+      });
+      const data = await response.json();
+
+      const projects = data.projects;
+      const projectIds = projects.map(project => project.projectid);
+      const uxCounts = projects.map(project => project.count);
+
+      renderFeedbackChart(projectIds, uxCounts);
+  } catch (error) {
+      console.error("Error fetching or parsing data:", error);
+  }
+}
+
+function renderFeedbackChart(projectIds, uxCounts) {
+  const trace = {
+      x: projectIds,
+      y: uxCounts,
+      type: 'bar',
+      marker: {
+          color: '#90EE90'
+      },
+      width: 0.5
+  };
+
+  const layout = {
+      title: 'Feedback Counts',
+      xaxis: {
+          title: 'Project ID',
+          autorange: true,
+          tickangle: -45
+      },
+      yaxis: {
+          title: 'Feedback Count',
+          autorange: true
+      }
+  };
+
+  const config = {
+    displayModeBar: false
+  };
+
+  Plotly.newPlot('uxChart', [trace], layout, config);
 
 }
