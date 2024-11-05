@@ -1,34 +1,27 @@
-<div class="form-container">
-  <h1 class="title">
-  Work Completion Report
-</h1>  
-    <div class="form-container" style="font-family: Arial, sans-serif;">
-      <div class="field">
-        <label class="label">Project Name</label>
-        <div class="control">
-          <select id="kode" name="projectName" required>
-            <option>Select Project</option>
-          </select>
-        </div>
+<body>
+  <div class="form-container">
+    <h1 class="title">Work Completion Report</h1>
+    
+    <div class="field">
+      <label class="label">Project Name</label>
+      <div class="control">
+        <select id="kode" name="projectName" required>
+          <option>Select Project</option>
+        </select>
       </div>
     </div>
-    
 
     <div class="field">
-      <label class="label" style="font-size: 14px;"><i class=""></i> Description</label>
+      <label class="label">Description</label>
       <div class="control">
-        <textarea class="textarea" id="solusi" placeholder="Write a description of the completed work" style="border: none; border-bottom: 1px solid #000; width: 100%; outline: none; padding: 5px 0;" required></textarea>
+        <textarea class="textarea" id="solusi" placeholder="Write a description of the completed work" required></textarea>
       </div>
     </div>
 
-    <div class="field is-grouped" style="justify-content: center;">
+    <div class="field is-grouped">
       <div class="control">
-        <button class="button is-link" id="buttonkirimfeedback">
-          Send
-        </button>
+        <button class="button is-link" id="buttonkirimfeedback">Send</button>
       </div>
-    </div>    
     </div>
   </div>
-
 </body>
