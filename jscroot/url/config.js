@@ -4,7 +4,7 @@ import { folderPath } from "https://cdn.jsdelivr.net/gh/jscroot/url@0.0.9/croot.
 //never use slash in front of file or directory
 //u might change croot parameter based on your path
 
-const baseAPIURL = 'https://extapi.buxxed.me'
+const baseAPIURL = 'https://api.do.my.id'
 
 export const backend = {
     user: {
