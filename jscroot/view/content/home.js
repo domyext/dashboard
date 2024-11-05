@@ -39,7 +39,7 @@ export async function main() {
 
     fetchFeedbackHistory();
     fetchCommitHistory();
-
+    fetchCommitStat();
 
     // Hide loader and show content after data is fetched
     document.getElementById("content").classList.remove("hidden");
@@ -310,4 +310,57 @@ function displayCommitHistory(data) {
     // Append row to the table
     uxHistoryTable.appendChild(row);
   });
+}
+
+async function fetchCommitStat() {
+  try {
+      const response = await fetch(backend.stats.commit, {
+          method: 'GET',
+          headers: {
+            'login': `${token}`,
+            'Content-Type': 'application/json'
+          }
+      });
+      const data = await response.json();
+
+      const projects = data.projects;
+      const projectIds = projects.map(project => project.projectid);
+      const commitCounts = projects.map(project => project.count);
+
+      renderCommitChart(projectIds, commitCounts);
+  } catch (error) {
+      console.error("Error fetching or parsing data:", error);
+  }
+}
+
+function renderCommitChart(projectIds, commitCounts) {
+  const trace = {
+      x: projectIds,
+      y: commitCounts,
+      type: 'bar',
+      marker: {
+          color: '#90EE90'
+      },
+      width: 0.5
+  };
+
+  const layout = {
+      title: 'Project Commit Counts',
+      xaxis: {
+          title: 'Project ID',
+          autorange: true,
+          tickangle: -45
+      },
+      yaxis: {
+          title: 'Commit Count',
+          autorange: true
+      }
+  };
+
+  const config = {
+    displayModeBar: false
+  };
+
+  Plotly.newPlot('comChart', [trace], layout, config);
+
 }
