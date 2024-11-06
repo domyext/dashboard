@@ -298,7 +298,7 @@ function displayCommitHistory(data) {
     const row = document.createElement('tr');
     // Solution column
     const solutionCell = document.createElement('td');
-    solutionCell.textContent = item.projectid || 'No Project Provided';
+    solutionCell.textContent = item.prname || 'No Project Provided';
     row.appendChild(solutionCell);
     // Comment column
     const commentCell = document.createElement('td');
@@ -325,18 +325,18 @@ async function fetchCommitStat() {
       const data = await response.json();
 
       const projects = data.projects;
-      const projectIds = projects.map(project => project.projectid);
+      const projectnames = projects.map(project => project.prname);
       const commitCounts = projects.map(project => project.count);
 
-      renderCommitChart(projectIds, commitCounts);
+      renderCommitChart(projectnames, commitCounts);
   } catch (error) {
       console.error("Error fetching or parsing data:", error);
   }
 }
 
-function renderCommitChart(projectIds, commitCounts) {
+function renderCommitChart(projectnames, commitCounts) {
   const trace = {
-      x: projectIds,
+      x: projectnames,
       y: commitCounts,
       type: 'bar',
       marker: {
@@ -378,18 +378,18 @@ async function fetchFeedbackStat() {
       const data = await response.json();
 
       const projects = data.projects;
-      const projectIds = projects.map(project => project.projectid);
+      const projectnames = projects.map(project => project.prname);
       const uxCounts = projects.map(project => project.count);
 
-      renderFeedbackChart(projectIds, uxCounts);
+      renderFeedbackChart(projectnames, uxCounts);
   } catch (error) {
       console.error("Error fetching or parsing data:", error);
   }
 }
 
-function renderFeedbackChart(projectIds, uxCounts) {
+function renderFeedbackChart(projectnames, uxCounts) {
   const trace = {
-      x: projectIds,
+      x: projectnames,
       y: uxCounts,
       type: 'bar',
       marker: {
