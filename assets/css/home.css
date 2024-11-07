@@ -9,7 +9,6 @@
 }
 
 
-
 .tile.is-parent:hover {
   transform: translateY(-2px);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
@@ -19,7 +18,6 @@
   border: 1px solid #d3d3d3; /* Border halus */
   border-radius: 12px; /* Meningkatkan border radius untuk penampilan lebih modern */
   margin: 15px 0; /* Jarak antar card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk gerakan dan bayangan */
 }
 
 .card-header {
