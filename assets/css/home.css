@@ -9,20 +9,27 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .tile.is-parent:hover {
   transform: translateY(-1px);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card {
-  border: 1px solid #d3d3d3; /* Border halus */
-  border-radius: 12px; /* Meningkatkan border radius untuk penampilan lebih modern */
-  margin: 15px 0; /* Jarak antar card */
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .card-header {
-  border-bottom: 1px solid #e0e0e0; /* Garis bawah lembut */
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.card-header-title {
+  font-weight: 600;
+  color: #333;
 }
 
 .table td {
@@ -36,11 +43,18 @@
   letter-spacing: 0.5px;
 }
 
-
-#todoIcon i { color: #007bff; }
-#doingIcon i { color: #ffc107; }
-#doneIcon i { color: #28a745; }
-#poinIcon i { color: #ff5722; }
+#todoIcon i {
+  color: #007bff;
+}
+#doingIcon i {
+  color: #ffc107;
+}
+#doneIcon i {
+  color: #28a745;
+}
+#poinIcon i {
+  color: #ff5722;
+}
 
 .loader-anim {
   display: flex;
@@ -104,16 +118,16 @@
   display: none;
 }
 
-.table-fixed thead{
+.table-fixed thead {
   background-color: #b0b0b0;
   table-layout: auto;
-  text-align: center; 
+  text-align: center;
 }
 
 .table-fixed thead th {
-  color: #000000; 
-  font-weight: bold; 
-  padding: 10px; 
+  color: #000000;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .table-fixed thead th:first-child {
@@ -126,5 +140,3 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-
-
