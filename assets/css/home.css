@@ -1,17 +1,18 @@
+/* Simpel dan modern untuk Tile */
 .tile.is-parent {
-  border: 1px solid #d3d3d3;
-  border-radius: 12px; /* Meningkatkan border radius untuk penampilan lebih modern */
-  padding: 15px;
-  margin: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Tambahan */
-  background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Gradient background */
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.5); /* Bayangan */
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+  background: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 
 .tile.is-parent:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card {
@@ -36,18 +37,10 @@
 }
 
 
-#todoIcon i {
-  color: #3498db;
-} /* To Do */
-#doingIcon i {
-  color: #f39c12;
-} /* Doing */
-#doneIcon i {
-  color: #2ecc71;
-} /* Done */
-#poinIcon i {
-  color: #e67e22;
-} /* Poin */
+#todoIcon i { color: #007bff; }
+#doingIcon i { color: #ffc107; }
+#doneIcon i { color: #28a745; }
+#poinIcon i { color: #ff5722; }
 
 .loader-anim {
   display: flex;
