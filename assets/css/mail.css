@@ -53,6 +53,12 @@ body {
     transition: transform 0.3s; /* Transisi untuk gambar */
 }
 
+#avatar{
+    display: flex;
+    justify-content: center; /* Menyusun gambar secara horizontal di tengah */
+    align-items: center; /* Menyusun gambar secara vertikal di tengah */
+}
+
 .avatar img:hover {
     transform: scale(1.1); /* Membesar saat hover pada gambar */
 }
