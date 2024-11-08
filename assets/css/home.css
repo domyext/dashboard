@@ -1,35 +1,28 @@
-/* Simpel dan modern untuk Tile */
 .tile.is-parent {
-  border: none;
-  border-radius: 8px;
-  padding: 12px;
-  margin: 8px;
-  background: #f9f9f9;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #d3d3d3;
+  border-radius: 12px; /* Meningkatkan border radius untuk penampilan lebih modern */
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Tambahan */
+  background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Gradient background */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.5); /* Bayangan */
 }
 
-.tile.is-parent:hover {
-  transform: translateY(-1px);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+.tile.is-parent:hover,
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card {
-  border: none;
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d3d3d3; /* Border halus */
+  border-radius: 12px; /* Meningkatkan border radius untuk penampilan lebih modern */
+  margin: 15px 0; /* Jarak antar card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk gerakan dan bayangan */
 }
 
 .card-header {
-  border-bottom: 1px solid #f0f0f0;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.card-header-title {
-  font-weight: 600;
-  color: #333;
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah lembut */
 }
 
 .table td {
@@ -44,17 +37,17 @@
 }
 
 #todoIcon i {
-  color: #007bff;
-}
+  color: #3498db;
+} /* To Do */
 #doingIcon i {
-  color: #ffc107;
-}
+  color: #f39c12;
+} /* Doing */
 #doneIcon i {
-  color: #28a745;
-}
+  color: #2ecc71;
+} /* Done */
 #poinIcon i {
-  color: #ff5722;
-}
+  color: #e67e22;
+} /* Poin */
 
 .loader-anim {
   display: flex;
