@@ -418,3 +418,23 @@ function renderFeedbackChart(projectnames, uxCounts) {
   Plotly.newPlot('uxChart', [trace], layout, config);
 
 }
+
+document.querySelector('.card-header-icon').addEventListener('click', function(event) {
+  event.preventDefault(); // Mencegah aksi default dari <a> tag
+  
+  const cardTable = document.querySelector('.card-table');
+  const icon = document.querySelector('.card-header-icon i');
+
+  // Periksa apakah cardTable tersembunyi atau tidak
+  if (cardTable.style.display === 'none' || cardTable.style.display === '') {
+    cardTable.style.display = 'block'; // Tampilkan konten
+    icon.classList.remove('fa-angle-down'); // Hapus ikon angle-down
+    icon.classList.add('fa-angle-up'); // Tambahkan ikon angle-up
+  } else {
+    cardTable.style.display = 'none'; // Sembunyikan konten
+    icon.classList.remove('fa-angle-up'); // Hapus ikon angle-up
+    icon.classList.add('fa-angle-down'); // Kembalikan ikon ke angle-down
+  }
+});
+
+
