@@ -1,16 +1,7 @@
-import {
-  addCSSIn,
-  setValue,
-  setInner,
-  addChild,
-} from "https://cdn.jsdelivr.net/gh/jscroot/element@0.1.8/croot.js";
-import { getCookie } from "https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js";
-import {
-  getJSON,
-  putJSON,
-  postJSON,
-} from "https://cdn.jsdelivr.net/gh/jscroot/api@0.0.8/croot.js";
-import { id, backend } from "../../url/config.js";
+import { addCSSIn, setValue, setInner, addChild } from 'https://cdn.jsdelivr.net/gh/jscroot/element@0.1.8/croot.js';
+import { getCookie } from 'https://cdn.jsdelivr.net/gh/jscroot/cookie@0.0.1/croot.js';
+import { getJSON, putJSON, postJSON } from 'https://cdn.jsdelivr.net/gh/jscroot/api@0.0.8/croot.js';
+import { id, backend } from '../../url/config.js';
 
 let tableTemplate = `
 <td width="5%"><i class="fa fa-bell-o"></i></td>
@@ -20,33 +11,33 @@ let tableTemplate = `
 </td>
 `;
 
-const token = getCookie("login");
+const token = getCookie('login');
 
 export async function main() {
   // Show loader and hide content initially
-  document.getElementById("content").classList.add("hidden");
-  document.querySelector(".loader-anim").classList.remove("hidden");
+  document.getElementById('content').classList.add('hidden');
+  document.querySelector('.loader-anim').classList.remove('hidden');
 
   // Fetch all required data
   try {
-    await addCSSIn("assets/css/admin.css", id.content);
+    await addCSSIn('assets/css/admin.css', id.content);
     await Promise.all([
-      getJSON(backend.user.data, "login", getCookie("login"), getUserFunction),
-      getJSON(backend.user.todo, "login", getCookie("login"), getUserTaskFunction),
-      getJSON(backend.user.doing, "login", getCookie("login"), getUserDoingFunction),
-      getJSON(backend.user.done, "login", getCookie("login"), getUserDoneFunction),
+      getJSON(backend.user.data, 'login', getCookie('login'), getUserFunction),
+      getJSON(backend.user.todo, 'login', getCookie('login'), getUserTaskFunction),
+      getJSON(backend.user.doing, 'login', getCookie('login'), getUserDoingFunction),
+      getJSON(backend.user.done, 'login', getCookie('login'), getUserDoneFunction),
     ]);
 
     fetchFeedbackHistory();
     fetchCommitHistory();
     fetchCommitStat();
     fetchFeedbackStat();
-    
+
     // Hide loader and show content after data is fetched
-    document.getElementById("content").classList.remove("hidden");
-    document.querySelector(".loader-anim").classList.add("hidden");
+    document.getElementById('content').classList.remove('hidden');
+    document.querySelector('.loader-anim').classList.add('hidden');
   } catch (error) {
-    console.error("Data fetching failed:", error);
+    console.error('Data fetching failed:', error);
     // Optionally handle error
   }
 }
@@ -54,24 +45,24 @@ export async function main() {
 function getUserFunction(result) {
   if (result.status !== 404) {
     const roundedPoin = Math.round(result.data.poin);
-    
+
     // Ambil elemen dengan id "bigpoin" dan "poinIcon"
-    const poinElement = document.getElementById("bigpoin");
-    const poinIcon = document.getElementById("poinIcon");
+    const poinElement = document.getElementById('bigpoin');
+    const poinIcon = document.getElementById('poinIcon');
 
     // Tampilkan ikon jika poin tersedia dan set poin text
     if (poinElement && poinIcon) {
       poinElement.textContent = ` ${roundedPoin}`; // Set nilai poin
-      poinIcon.style.display = "inline"; // Tampilkan ikon
+      poinIcon.style.display = 'inline'; // Tampilkan ikon
     }
   } else {
-    redirect("/signup");
+    redirect('/signup');
   }
 }
 
 function getUserTaskFunction(result) {
-  setInner("list", ""); // Bersihkan daftar To Do
-  const todoElement = document.getElementById("bigtodo");
+  setInner('list', ''); // Bersihkan daftar To Do
+  const todoElement = document.getElementById('bigtodo');
 
   if (result.status === 200 && todoElement) {
     // Perbarui teks jumlah tugas
@@ -81,138 +72,96 @@ function getUserTaskFunction(result) {
     result.data.forEach(isiTaskList);
   } else {
     // Jika tidak ada tugas, set ke 0
-    todoElement.textContent = "0";
+    todoElement.textContent = '0';
   }
 }
 
 function isiTaskList(value) {
-  let content = tableTemplate
-    .replace("#TASKNAME#", value.task)
-    .replace("#TASKID#", value._id)
-    .replace("#LABEL#", "Ambil");
-  addChild("list", "tr", "", content);
+  let content = tableTemplate.replace('#TASKNAME#', value.task).replace('#TASKID#', value._id).replace('#LABEL#', 'Ambil');
+  addChild('list', 'tr', '', content);
   // Jalankan logika tambahan setelah addChild
   runAfterAddChild(value);
 }
 
 function runAfterAddChild(value) {
   // Temukan elemen tr yang baru saja ditambahkan
-  const rows = document.getElementById("list").getElementsByTagName("tr");
+  const rows = document.getElementById('list').getElementsByTagName('tr');
   const lastRow = rows[rows.length - 1];
 
   // Contoh: Tambahkan event listener atau manipulasi DOM lainnya
-  const button = lastRow.querySelector(".button");
+  const button = lastRow.querySelector('.button');
   if (button) {
-    button.addEventListener("click", () => {
-      putJSON(
-        backend.user.doing,
-        "login",
-        getCookie("login"),
-        { _id: value._id },
-        putTaskFunction
-      );
+    button.addEventListener('click', () => {
+      putJSON(backend.user.doing, 'login', getCookie('login'), { _id: value._id }, putTaskFunction);
     });
   }
 }
 
 function putTaskFunction(result) {
   if (result.status === 200) {
-    getJSON(
-      backend.user.todo,
-      "login",
-      getCookie("login"),
-      getUserTaskFunction
-    );
-    getJSON(
-      backend.user.doing,
-      "login",
-      getCookie("login"),
-      getUserDoingFunction
-    );
+    getJSON(backend.user.todo, 'login', getCookie('login'), getUserTaskFunction);
+    getJSON(backend.user.doing, 'login', getCookie('login'), getUserDoingFunction);
   }
 }
 
 function getUserDoingFunction(result) {
-  setInner("doing", ""); // Bersihkan daftar Doing
-  const doingElement = document.getElementById("bigdoing");
+  setInner('doing', ''); // Bersihkan daftar Doing
+  const doingElement = document.getElementById('bigdoing');
 
   if (result.status === 200 && doingElement) {
     // Perbarui teks status Doing
-    doingElement.textContent = "OTW"; // Atau bisa juga menggunakan result.data.length.toString() jika ingin menunjukkan jumlah
+    doingElement.textContent = 'OTW'; // Atau bisa juga menggunakan result.data.length.toString() jika ingin menunjukkan jumlah
 
     // Jika ada data tugas, tambahkan ke daftar Doing
     if (result.data && result.data.task) {
-      let content = tableTemplate
-        .replace("#TASKNAME#", result.data.task)
-        .replace("#TASKID#", result.data._id)
-        .replace("#LABEL#", "Beres");
-      addChild("doing", "tr", "", content);
+      let content = tableTemplate.replace('#TASKNAME#', result.data.task).replace('#TASKID#', result.data._id).replace('#LABEL#', 'Beres');
+      addChild('doing', 'tr', '', content);
       // Jalankan logika tambahan setelah addChild
       runAfterAddChildDoing(result.data);
     }
   } else {
     // Jika tidak ada tugas, set ke 0
-    doingElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
+    doingElement.textContent = '0'; // Mengatur ulang jika tidak ada tugas
   }
 }
 
-
 function runAfterAddChildDoing(value) {
   // Temukan elemen tr yang baru saja ditambahkan
-  const rows = document.getElementById("doing").getElementsByTagName("tr");
+  const rows = document.getElementById('doing').getElementsByTagName('tr');
   const lastRow = rows[rows.length - 1];
 
   // Contoh: Tambahkan event listener atau manipulasi DOM lainnya
-  const button = lastRow.querySelector(".button");
+  const button = lastRow.querySelector('.button');
   if (button) {
-    button.addEventListener("click", () => {
-      postJSON(
-        backend.user.done,
-        "login",
-        getCookie("login"),
-        { _id: value._id },
-        postTaskFunction
-      );
+    button.addEventListener('click', () => {
+      postJSON(backend.user.done, 'login', getCookie('login'), { _id: value._id }, postTaskFunction);
     });
   }
 }
 
 function postTaskFunction(result) {
   if (result.status === 200) {
-    getJSON(
-      backend.user.done,
-      "login",
-      getCookie("login"),
-      getUserDoneFunction
-    );
-    getJSON(
-      backend.user.doing,
-      "login",
-      getCookie("login"),
-      getUserDoingFunction
-    );
+    getJSON(backend.user.done, 'login', getCookie('login'), getUserDoneFunction);
+    getJSON(backend.user.doing, 'login', getCookie('login'), getUserDoingFunction);
   }
 }
 
 function getUserDoneFunction(result) {
-  setInner("done", ""); // Bersihkan daftar Done
-  const doneElement = document.getElementById("bigdone");
+  setInner('done', ''); // Bersihkan daftar Done
+  const doneElement = document.getElementById('bigdone');
 
   if (result.status === 200 && doneElement) {
     // Perbarui teks status Done
-    doneElement.textContent = "OK"; // Atau jika ingin menunjukkan jumlah tugas yang sudah selesai, gunakan result.data.length.toString()
+    doneElement.textContent = 'OK'; // Atau jika ingin menunjukkan jumlah tugas yang sudah selesai, gunakan result.data.length.toString()
 
     // Jika ada data tugas, tambahkan ke daftar Done
     if (result.data && result.data.task) {
-      let content = tableTemplate
-        .replace("#TASKNAME#", result.data.task)
-        .replace("#TASKID#", result.data._id)
-        .replace("#LABEL#", "Arsip");
-      addChild("done", "tr", "", content);
+      let content = tableTemplate.replace('#TASKNAME#', result.data.task).replace('#TASKID#', result.data._id).replace('#LABEL#', 'Arsip');
+      addChild('done', 'tr', '', content);
     }
   } else {
     // Jika tidak ada tugas, set ke 0
-    doneElement.textContent = "0"; // Mengatur ulang jika tidak ada tugas
+    doneElement.textContent = '0'; // Mengatur ulang jika tidak ada tugas
   }
 }
 
@@ -220,22 +169,22 @@ function fetchFeedbackHistory() {
   fetch(backend.ux.getReportData, {
     method: 'GET',
     headers: {
-      'login': `${token}`,
-      'Content-Type': 'application/json'
-    }
+      login: `${token}`,
+      'Content-Type': 'application/json',
+    },
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    displayFeedbackHistory(data);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      displayFeedbackHistory(data);
+    })
+    .catch((error) => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
 }
 
 // Function to display feedback history in the table
@@ -245,7 +194,7 @@ function displayFeedbackHistory(data) {
   // Clear existing rows
   uxHistoryTable.innerHTML = '';
 
-  data.forEach(item => {
+  data.forEach((item) => {
     const row = document.createElement('tr');
 
     // Solution column
@@ -272,29 +221,29 @@ function fetchCommitHistory() {
   fetch(backend.project.getcommithistory, {
     method: 'GET',
     headers: {
-      'login': `${token}`,
-      'Content-Type': 'application/json'
-    }
+      login: `${token}`,
+      'Content-Type': 'application/json',
+    },
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    displayCommitHistory(data);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      displayCommitHistory(data);
+    })
+    .catch((error) => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
 }
 // Function to display feedback history in the table
 function displayCommitHistory(data) {
   const uxHistoryTable = document.getElementById('logcommit');
   // Clear existing rows
   uxHistoryTable.innerHTML = '';
-  data.forEach(item => {
+  data.forEach((item) => {
     const row = document.createElement('tr');
     // Solution column
     const solutionCell = document.createElement('td');
@@ -315,126 +264,126 @@ function displayCommitHistory(data) {
 
 async function fetchCommitStat() {
   try {
-      const response = await fetch(backend.stats.commit, {
-          method: 'GET',
-          headers: {
-            'login': `${token}`,
-            'Content-Type': 'application/json'
-          }
-      });
-      const data = await response.json();
+    const response = await fetch(backend.stats.commit, {
+      method: 'GET',
+      headers: {
+        login: `${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
 
-      const projects = data.projects;
-      const projectnames = projects.map(project => project.prname);
-      const commitCounts = projects.map(project => project.count);
+    const projects = data.projects;
+    const projectnames = projects.map((project) => project.prname);
+    const commitCounts = projects.map((project) => project.count);
 
-      renderCommitChart(projectnames, commitCounts);
+    renderCommitChart(projectnames, commitCounts);
   } catch (error) {
-      console.error("Error fetching or parsing data:", error);
+    console.error('Error fetching or parsing data:', error);
   }
 }
 
 function renderCommitChart(projectnames, commitCounts) {
   const trace = {
-      x: projectnames,
-      y: commitCounts,
-      type: 'bar',
-      marker: {
-          color: '#90EE90'
-      },
-      width: 0.5
+    x: projectnames,
+    y: commitCounts,
+    type: 'bar',
+    marker: {
+      color: '#90EE90',
+    },
+    width: 0.5,
   };
 
   const layout = {
-      title: 'Project Commit Counts',
-      xaxis: {
-          title: 'Project ID',
-          autorange: true,
-          tickangle: -45
-      },
-      yaxis: {
-          title: 'Commit Count',
-          autorange: true
-      }
+    title: 'Project Commit Counts',
+    xaxis: {
+      title: 'Project ID',
+      autorange: true,
+      tickangle: -45,
+    },
+    yaxis: {
+      title: 'Commit Count',
+      autorange: true,
+    },
   };
 
   const config = {
-    displayModeBar: false
+    displayModeBar: false,
   };
 
   Plotly.newPlot('comChart', [trace], layout, config);
-
 }
 
 async function fetchFeedbackStat() {
   try {
-      const response = await fetch(backend.stats.feedback, {
-          method: 'GET',
-          headers: {
-            'login': `${token}`,
-            'Content-Type': 'application/json'
-          }
-      });
-      const data = await response.json();
+    const response = await fetch(backend.stats.feedback, {
+      method: 'GET',
+      headers: {
+        login: `${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
 
-      const projects = data.projects;
-      const projectnames = projects.map(project => project.prname);
-      const uxCounts = projects.map(project => project.count);
+    const projects = data.projects;
+    const projectnames = projects.map((project) => project.prname);
+    const uxCounts = projects.map((project) => project.count);
 
-      renderFeedbackChart(projectnames, uxCounts);
+    renderFeedbackChart(projectnames, uxCounts);
   } catch (error) {
-      console.error("Error fetching or parsing data:", error);
+    console.error('Error fetching or parsing data:', error);
   }
 }
 
 function renderFeedbackChart(projectnames, uxCounts) {
   const trace = {
-      x: projectnames,
-      y: uxCounts,
-      type: 'bar',
-      marker: {
-          color: '#90EE90'
-      },
-      width: 0.5
+    x: projectnames,
+    y: uxCounts,
+    type: 'bar',
+    marker: {
+      color: '#90EE90',
+    },
+    width: 0.5,
   };
 
   const layout = {
-      title: 'Feedback Counts',
-      xaxis: {
-          title: 'Project ID',
-          autorange: true,
-          tickangle: -45
-      },
-      yaxis: {
-          title: 'Feedback Count',
-          autorange: true
-      }
+    title: 'Feedback Counts',
+    xaxis: {
+      title: 'Project ID',
+      autorange: true,
+      tickangle: -45,
+    },
+    yaxis: {
+      title: 'Feedback Count',
+      autorange: true,
+    },
   };
 
   const config = {
-    displayModeBar: false
+    displayModeBar: false,
   };
 
   Plotly.newPlot('uxChart', [trace], layout, config);
-
 }
 
-document.querySelector('.card-header-icon').addEventListener('click', function(event) {
-  event.preventDefault(); // Mencegah aksi default dari <a> tag
-  
-  const cardTable = document.querySelector('.card-table');
-  const icon = document.querySelector('.card-header-icon i');
+// Ambil semua elemen dengan kelas 'toggle-content' (untuk ikon)
+const toggleIcons = document.querySelectorAll('.toggle-content');
 
-  // Periksa apakah cardTable tersembunyi atau tidak
-  if (cardTable.style.display === 'none' || cardTable.style.display === '') {
-    cardTable.style.display = 'block'; // Tampilkan konten
-    icon.classList.remove('fa-angle-down'); // Hapus ikon angle-down
-    icon.classList.add('fa-angle-up'); // Tambahkan ikon angle-up
-  } else {
-    cardTable.style.display = 'none'; // Sembunyikan konten
-    icon.classList.remove('fa-angle-up'); // Hapus ikon angle-up
-    icon.classList.add('fa-angle-down'); // Kembalikan ikon ke angle-down
-  }
+toggleIcons.forEach((icon) => {
+  icon.addEventListener('click', function (event) {
+    event.preventDefault();
+    const cardTable = this.closest('.card').querySelector('.content-box');
+    const iconElement = this.querySelector('i');
+
+    // Toggle tampilan konten
+    if (cardTable.style.display === 'none') {
+      cardTable.style.display = 'block'; // Menampilkan konten
+      iconElement.classList.remove('fa-angle-down');
+      iconElement.classList.add('fa-angle-up'); // Mengganti ikon ke "angle up"
+    } else {
+      cardTable.style.display = 'none'; // Menyembunyikan konten
+      iconElement.classList.remove('fa-angle-up');
+      iconElement.classList.add('fa-angle-down'); // Mengganti ikon ke "angle down"
+    }
+  });
 });
-
-
