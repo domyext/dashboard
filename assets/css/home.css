@@ -104,6 +104,15 @@
   align-items: center;
   height: 100vh; /* Full viewport height */
 }
+
+.card-table {
+  display: none;
+}
+
+.card-header-icon {
+  cursor: pointer;
+}
+
 .svg {
   height: 100px;
   width: 100px;
