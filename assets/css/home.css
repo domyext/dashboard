@@ -88,11 +88,11 @@
 }
 
 .subtitle {
-  font-family: 'Segoe UI', Tahoma, sans-serif; /* Font tipis dan bersih */
-  font-size: 0.9rem;
-  color: #666; /* Warna lembut */
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  color: #444; /* Warna lebih gelap untuk kontras */
+  font-weight: 500;
 }
+
 
 #todoIcon i {
   color: #007bff;
