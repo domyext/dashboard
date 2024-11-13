@@ -82,9 +82,14 @@
   border-bottom-right-radius: 8px;
 }
 
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
 .subtitle {
-  font-size: 0.95rem;
-  color: #444; /* Warna lebih gelap untuk kontras */
+  font-size: 1rem;
+  color: #555;
   font-weight: 500;
 }
 
