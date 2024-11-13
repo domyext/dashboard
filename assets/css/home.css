@@ -122,12 +122,15 @@
   height: 100vh; /* Full viewport height */
 }
 
-.card-table {
-  display: none;
+/* Animation for content toggle */
+.card-table{
+  display: none; /* Default hide */
 }
-
-.card-header-icon {
-  cursor: pointer;
+.card-header-icon.toggle-content {
+  transition: transform 0.3s;
+}
+.card-header-icon.toggle-content.active {
+  transform: rotate(180deg);
 }
 
 .svg {
