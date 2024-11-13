@@ -75,9 +75,9 @@
   border-radius: 10px;
 }
 .table-fixed thead {
-  background-color: #f0f0f0;
+  background-color: #b0b0b0;
+  text-align: center;
   font-weight: bold;
-  text-align: left;
 }
 .table-fixed th,
 .table-fixed td {
@@ -87,12 +87,12 @@
   color: #333;
 }
 .table-fixed thead th:first-child {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .table-fixed thead th:last-child {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .table-fixed tbody tr {
   transition: background-color 0.2s ease;
@@ -160,8 +160,10 @@
   }
 }
 
-.fade-out {
-  animation: fadeOut 0.5s ease-out forwards;
+/* Fade Animations */
+.fade-out,
+.fade-in {
+  animation: fadeInOut 0.4s ease-in-out;
 }
 
 @keyframes fadeOut {
@@ -171,10 +173,6 @@
   to {
     opacity: 0;
   }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -188,35 +186,4 @@
 
 .hidden {
   display: none;
-}
-
-.table-fixed thead {
-  background-color: #b0b0b0;
-  table-layout: auto;
-  text-align: center;
-}
-
-.table-fixed thead th {
-  color: #000000;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.table-fixed thead th:first-child {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-/* Membulatkan hanya ujung kanan */
-.table-fixed thead th:last-child {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.fade-in {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-.fade-out {
-  animation: fadeOut 0.4s ease-in-out;
 }
