@@ -125,7 +125,7 @@
 
 /* Animation for content toggle */
 .card-table {
-  display: block; /* Default hide */
+  display: none; /* Default hide */
 }
 .card-header-icon.toggle-content {
   transition: transform 0.3s;
