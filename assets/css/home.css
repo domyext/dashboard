@@ -93,17 +93,18 @@
   font-weight: 500;
 }
 
+/* Icon Colors */
 #todoIcon i {
-  color: #007bff;
+  color: #0066cc;
 }
 #doingIcon i {
-  color: #ffc107;
+  color: #ffa500;
 }
 #doneIcon i {
   color: #28a745;
 }
 #poinIcon i {
-  color: #ff5722;
+  color: #ff6347;
 }
 
 .loader-anim {
