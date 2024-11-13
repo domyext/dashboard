@@ -25,17 +25,17 @@ body {
 }
 
 .avatar img {
-  max-width: 500px; /* Ukuran gambar avatar */
-  max-height: 500px; /* Ukuran gambar avatar */
-  border: 5px solid #4a90e2; /* Border gambar */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan pada gambar */
-  transition: transform 0.3s; /* Transisi untuk gambar */
+  max-width: 400px; /* Ukuran gambar lebih kecil */
+  max-height: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Bayangan lembut */
+  transition: transform 0.3s ease;
 }
 
 #avatar {
   display: flex;
-  justify-content: center; /* Menyusun gambar secara horizontal di tengah */
-  align-items: center; /* Menyusun gambar secara vertikal di tengah */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .hero-title {
