@@ -69,8 +69,7 @@ body {
 }   
 
 #nama {
-  display: flex;
-  justify-content: center; /* Mengatur tombol agar berada di tengah secara horizontal */
-  align-items: center; /* Mengatur tombol agar berada di tengah secara vertikal (opsional jika diperlukan) */
-  height: 10vh; /* Jika ingin tombol di tengah secara vertikal seluruh layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
