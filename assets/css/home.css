@@ -115,15 +115,16 @@
   color: #ff6347;
 }
 
+/* Loader Animation */
 .loader-anim {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 
 /* Animation for content toggle */
-.card-table{
+.card-table {
   display: none; /* Default hide */
 }
 .card-header-icon.toggle-content {
