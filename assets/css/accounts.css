@@ -12,7 +12,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Gaya untuk tombol Cancel */
+
 #buttonbatalaccount {
   padding: 15px 45px;
   color: white;
@@ -26,13 +26,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Efek hover untuk tombol Send */
+
 #buttonkirimaccount:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
 
-/* Efek hover untuk tombol Cancel */
+
 #buttonbatalaccount:hover {
   background-color: #e54c54;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -41,10 +41,10 @@
 }
 
 .button-container {
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Space between buttons */
-  margin-top: 20px; /* Optional: space above the buttons */
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  margin-top: 20px; 
 }
 
   
