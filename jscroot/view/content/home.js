@@ -247,7 +247,7 @@ function displayCommitHistory(data) {
     const row = document.createElement('tr');
     // Solution column
     const solutionCell = document.createElement('td');
-    solutionCell.textContent = item.prname || 'No Project Provided';
+    solutionCell.textContent = item.projectname || 'No Project Provided';
     row.appendChild(solutionCell);
     // Comment column
     const commentCell = document.createElement('td');
