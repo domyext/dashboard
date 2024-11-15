@@ -365,25 +365,3 @@ function renderFeedbackChart(projectnames, uxCounts) {
 
   Plotly.newPlot('uxChart', [trace], layout, config);
 }
-
-// Ambil semua elemen dengan kelas 'toggle-content' (untuk ikon)
-const toggleIcons = document.querySelectorAll('.toggle-content');
-
-toggleIcons.forEach((icon) => {
-  icon.addEventListener('click', function (event) {
-    event.preventDefault();
-    const cardTable = this.closest('.card').querySelector('.content-box');
-    const iconElement = this.querySelector('i');
-
-    // Toggle tampilan konten
-    if (cardTable.style.display === 'none') {
-      cardTable.style.display = 'block'; // Menampilkan konten
-      iconElement.classList.remove('fa-angle-down');
-      iconElement.classList.add('fa-angle-up'); // Mengganti ikon ke "angle up"
-    } else {
-      cardTable.style.display = 'none'; // Menyembunyikan konten
-      iconElement.classList.remove('fa-angle-up');
-      iconElement.classList.add('fa-angle-down'); // Mengganti ikon ke "angle down"
-    }
-  });
-});
