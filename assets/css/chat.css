@@ -33,7 +33,6 @@ body {
   margin-top: 2rem;
 }
 
-/* Chat Bubbles */
 .chat-message {
   display: block;
   padding: 10px;
@@ -58,12 +57,11 @@ body {
 }
 
 .chat-message.other {
-  background-color: #f8d7da; /* Other message color */
+  background-color: #f8d7da;
   align-self: flex-start;
   border-radius: 0 10px 10px 10px;
 }
 
-/* Chat Input */
 .chat-input-container {
   display: flex;
   padding: 10px;
@@ -94,7 +92,6 @@ body {
   border-radius: 20px;
 }
 
-/* Buttons */
 .button {
   border-radius: 20px;
 }
@@ -103,7 +100,6 @@ body {
   margin-left: 5px;
 }
 
-/* Message Bubbles (Sent and Received) */
 .message {
   padding: 10px;  
   max-width: fit-content;
