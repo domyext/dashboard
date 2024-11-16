@@ -14,14 +14,14 @@ body {
 
 .container {
   max-width: 600px;
-  padding: 1rem; /* Padding sedikit lebih ringkas */
+  padding: 1rem;
 }
 
 .box {
-  border-radius: 12px; /* Sudut kotak lebih halus */
-  padding: 1.5rem; /* Padding box lebih ringkas */
-  background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang box lebih terang */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Bayangan lembut */
+  border-radius: 12px;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .avatar img {
