@@ -25,9 +25,9 @@ body {
 }
 
 .avatar img {
-  max-width: 400px; /* Ukuran gambar lebih kecil */
+  max-width: 400px;
   max-height: 400px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Bayangan lembut */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
@@ -52,10 +52,10 @@ body {
   background-color: #6a1b9a;
   color: white;
   width: 100%;
-  height: 48px; /* Lebar dan tinggi tombol sedikit lebih kecil */
-  border-radius: 6px; /* Sudut tombol lebih halus */
+  height: 48px;
+  border-radius: 6px;
   font-weight: 600;
-  font-size: 15px; /* Ukuran font sedikit lebih kecil */
+  font-size: 15px;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
