@@ -7,7 +7,7 @@
   cursor: pointer;
   border-radius: 30px;
   background: linear-gradient(to right, #36d1dc, #5b86e5);
-  border:0cm;
+  border: none;
   transition: 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
