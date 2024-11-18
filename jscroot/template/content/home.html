@@ -88,9 +88,13 @@
   <div class="card events-card">
     <header class="card-header">
       <p class="card-header-title">Feedback Chart</p>
-      <a href="#" class="card-header-icon toggle-content" aria-label="more options"> </a>
+      <span class="card-header-icon" aria-label="more options">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
     </header>
-    <div id="uxChart" style="width: 100vw; height: 50vh"></div>
+    <div id="uxChartContainer" class="content-box">
+      <div id="uxChart" style="width: 100%; height: 50vh"></div>
+    </div>
   </div>
 
   <div class="card events-card">
