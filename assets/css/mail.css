@@ -33,18 +33,18 @@ body {
 
 #avatar {
   display: flex;
-  justify-content: center;
+  justify-content: center;  /*to make image center*/
   align-items: center;
   margin-bottom: 1rem;
 }
 
 .hero-title {
-  color: #000;
+  color: #000;  /*color for title*/
   font-weight: 600;
 }
 
 .subtitle {
-  color: #000;
+  color: #fff; /*color for subtitle*/
   margin-bottom: 1rem;
 }
 
