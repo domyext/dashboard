@@ -64,6 +64,16 @@
   color: #444;
 }
 
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 10px;
+}
+
+#comChart {
+  min-width: 600px; 
+}
+
 .content {
   padding: 12px 16px;
 }
@@ -138,6 +148,7 @@
   height: 100px;
   width: 100px;
 }
+
 .lingkaran {
   stroke: #00ffc8;
   stroke-width: 5px;
