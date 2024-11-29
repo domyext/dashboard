@@ -44,7 +44,7 @@ body {
 }
 
 .subtitle {
-  color: #000; 
+  color: #fff; /*mengubah warna pada subtitle judul*/
   margin-bottom: 1rem;
 }
 
