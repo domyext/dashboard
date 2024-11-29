@@ -94,11 +94,11 @@
   padding: 5px 0;
   border-right: 50%;
   color: #aaa; 
-  opacity: 2; 
+  opacity: 1; 
 }
 
 .field > .label {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .control.has-icons-left .input {
