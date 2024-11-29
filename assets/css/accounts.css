@@ -98,8 +98,9 @@
 }
 
 .field > .label {
-  font-size: 16px;
+  font-size: 15px;
 }
+
 
 .control.has-icons-left .input {
   color: black !important;
