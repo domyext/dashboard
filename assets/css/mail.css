@@ -39,12 +39,12 @@ body {
 }
 
 .hero-title {
-  color: #000;  
+  color: #000;  /*mengatur warna judul */
   font-weight: 600;
 }
 
 .subtitle {
-  color: #000; 
+  color: #fff; /*mengatur warna sub judul */
   margin-bottom: 1rem;
 }
 
