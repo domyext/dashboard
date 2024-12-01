@@ -21,6 +21,8 @@ export const backend = {
         data: `${baseAPIURL}/data/proyek`,
         anggota: `${baseAPIURL}/data/proyek/anggota`,
         getcommithistory: `${baseAPIURL}/data/poin`,
+        postGroup: `${baseAPIURL}/data/group`,
+        getGroup: `${baseAPIURL}/data/group`,
     },
     ux: {
         feedback: `${baseAPIURL}/notif/ux/postfeedback`,
