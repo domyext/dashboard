@@ -32,6 +32,8 @@ export function getContentURL(){
             return url.template.content+"notifications/publish.html";
         case "notifications/program":
             return url.template.content+"notifications/program.html";
+        case "notifications/group":
+            return url.template.content+"notifications/group.html";
         case "explore":
             return url.template.content+"explore.html";
         case "saved":
@@ -75,6 +77,8 @@ export function getURLContentJS(){
             return url.view.content+"notifications/publish.js";
         case "notifications/program":
             return url.view.content+"notifications/program.js";
+        case "notifications/group":
+            return url.view.content+"notifications/group.js";
         case "explore":
             return url.view.content+"explore.js";
         case "saved":
