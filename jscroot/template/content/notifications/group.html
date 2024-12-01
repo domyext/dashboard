@@ -1,0 +1,79 @@
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+    .field {
+      margin-bottom: 15px;
+    }
+    .label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+    .control {
+      width: 100%;
+    }
+    select, textarea, input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    .is-grouped {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .button:hover {
+      background-color: #218838;
+    }
+  </style>
+  <div class="form-container">
+    <h1 class="title">Create a New Group</h1>
+
+    <div class="field">
+      <label class="label">Group Name</label>
+      <div class="control">
+        <input type="text" id="groupNameInput" placeholder="Enter group name" required>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button" id="createGroupButton">Create Group</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="groupCardsContainer" style="margin-top: 20px;"></div>
